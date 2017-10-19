@@ -16,16 +16,16 @@
 
 
 Pod::Spec.new do |s|
-  s.name         = "LZExtension"
-  s.version      = "0.0.1"
-  s.summary      = "A 简单的扩展类 of LZExtension."
-  s.homepage     = "https://github.com/ZoeTina/LZExtension"
-  s.license      = "MIT"
-  s.author       = { "佐伊" => "136769890@qq.com" }
-  s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/ZoeTina/LZExtension.git", :tag => "0.0.2" }
-  s.source_files = "LZExtension", "LZExtension/**/*.{h,m}"
-  s.framework    = "UIKit"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
+  s.name          = 'LZExtension'
+  s.version       = '1.0.0'
+  s.license       = { :type => 'MIT', :file => 'LICENSE' }
+  s.summary       = 'A LZExtension in iOS.'
+  s.homepage      = 'https://github.com/ZoeTina/LZExtension'
+  s.authors       = { '佐伊' => '136769890@qq.com' }
+  s.source        = { :git => "https://github.com/ZoeTina/LZExtension.git", :tag => s.version.to_s}
+  s.platform      = :ios, '8.0'
+  s.ios.deployment_target = '8.0'
+  s.requires_arc  = true
+  s.source_files  = "LZExtension", "*.{h,m}"
+  s.public_header_files = 'YYKit/**/*.{h}'
 end

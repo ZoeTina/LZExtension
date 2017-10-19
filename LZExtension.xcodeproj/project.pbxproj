@@ -410,7 +410,7 @@
 				TargetAttributes = {
 					E744768F1F96612C002EC7B8 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8RL8MGBZ32;
+						DevelopmentTeam = 9TG69MYF39;
 						ProvisioningStyle = Automatic;
 					};
 					E74476A81F96612C002EC7B8 = {
@@ -665,9 +665,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8RL8MGBZ32;
+				DEVELOPMENT_TEAM = 9TG69MYF39;
 				GCC_PREFIX_HEADER = LZExtension/AppConstant.h;
 				INFOPLIST_FILE = LZExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Triste.LZExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -678,9 +679,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8RL8MGBZ32;
+				DEVELOPMENT_TEAM = 9TG69MYF39;
 				GCC_PREFIX_HEADER = LZExtension/AppConstant.h;
 				INFOPLIST_FILE = LZExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Triste.LZExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -756,6 +758,7 @@
 				E74476BF1F96612C002EC7B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E74476C01F96612C002EC7B8 /* Build configuration list for PBXNativeTarget "LZExtensionTests" */ = {
 			isa = XCConfigurationList;
@@ -764,6 +767,7 @@
 				E74476C21F96612C002EC7B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E74476C31F96612C002EC7B8 /* Build configuration list for PBXNativeTarget "LZExtensionUITests" */ = {
 			isa = XCConfigurationList;
@@ -772,6 +776,7 @@
 				E74476C51F96612C002EC7B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
