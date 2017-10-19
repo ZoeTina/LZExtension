@@ -18,11 +18,11 @@
     [super viewDidLoad];//labelWithTitle
     // Do any additional setup after loading the view, typically from a nib.
     
-    UILabel *title = [UILabel labelWithTitle:@"都是一些扩张类,具体请看代码"
-                                       color:kColorWithRGB(211, 0, 0)
-                                        font:[UIFont systemFontOfSizeAdapter:15.0]];
-    title.frame = CGRectMake(0, (self.view.height-20)/2, self.view.width, 20);
-    [self.view addSubview:title];
+//    UILabel *title = [UILabel labelWithTitle:@"都是一些扩张类,具体请看代码"
+//                                       color:[UIColor colorWithRed:211 green:0 blue:0]
+//                                        font:[UIFont systemFontOfSizeAdapter:15.0]];
+//    title.frame = CGRectMake(0, (self.view.height-20)/2, self.view.width, 20);
+//    [self.view addSubview:title];
 }
 
 

@@ -59,7 +59,7 @@ const char *LZ_FIND_VIEW_KEY;
         const char *cName = ivar_getName(ivar);
         NSString *name = [[NSString alloc] initWithUTF8String:cName];
         
-        YYLog(@"%@", name);
+        NSLog(@"遍历当前视图的成员变量 - 仅供测试使用--%@", name);
     }
     
     // 释放成员变量列表
