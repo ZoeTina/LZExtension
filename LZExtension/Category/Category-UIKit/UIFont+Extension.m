@@ -7,6 +7,9 @@
 //
 
 #import "UIFont+Extension.h"
+#define YYScreenWidth   ([UIScreen mainScreen].bounds.size.width)
+#define YYScreenHeight  ([UIScreen mainScreen].bounds.size.height)
+#define YYScreenBounds  ([UIScreen mainScreen].bounds)
 
 @implementation UIFont (Extension)
 /**
@@ -14,7 +17,7 @@
  */
 + (CGFloat)fontToSize:(CGFloat)fontSize
 {
-    float widthR = kScreenWidth/375.0;
+    float widthR = YYScreenWidth/375.0;
     float tempFontSize = fontSize;
     widthR > 1 ? (tempFontSize+=1) : (tempFontSize-=1);
     

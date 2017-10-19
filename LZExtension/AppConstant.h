@@ -45,10 +45,6 @@
 #define YYStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 //获取屏幕 宽度、高度 -- //获取屏幕尺寸
-#define YYScreenWidth   ([UIScreen mainScreen].bounds.size.width)
-#define YYScreenHeight  ([UIScreen mainScreen].bounds.size.height)
-#define YYScreenBounds  ([UIScreen mainScreen].bounds)
-
 #define kScreenWidth    ([UIScreen mainScreen].bounds.size.width)
 #define kScreenHeight   ([UIScreen mainScreen].bounds.size.height)
 #define kScreenBounds   ([UIScreen mainScreen].bounds)
