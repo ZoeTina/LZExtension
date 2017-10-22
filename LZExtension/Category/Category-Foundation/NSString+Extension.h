@@ -15,7 +15,7 @@
 /**
  *手机号码验证 MODIFIED BY HELENSONG
  */
-- (BOOL) isValidateMobile;
+- (BOOL) lz_isValidateMobile;
 ///**
 // *身份证验证
 // */
@@ -23,27 +23,27 @@
 /**
  * 判断字段是否包含空格
  */
-- (BOOL)validateContainsSpace;
+- (BOOL)lz_validateContainsSpace;
 
 /**
  *  根据生日返回年龄
  */
-- (NSString *_Nonnull)ageFromBirthday;
+- (NSString *_Nonnull)lz_ageFromBirthday;
 
 /**
  *  根据身份证返回岁数
  */
-- (NSString *_Nonnull)ageFromIDCard;
+- (NSString *_Nonnull)lz_ageFromIDCard;
 
 /**
  *  根据身份证返回生日
  */
-- (NSString *_Nonnull)birthdayFromIDCard;
+- (NSString *_Nonnull)lz_birthdayFromIDCard;
 
 /**
  *  根据身份证返回性别
  */
-- (NSString *_Nonnull)sexFromIDCard;
+- (NSString *_Nonnull)lz_sexFromIDCard;
 
 /**
  *  返回字符串所占用的尺寸
@@ -51,16 +51,16 @@
  *  @param font    字体
  *  @param maxSize 最大尺寸
  */
-- (CGSize)sizeWithFont:(UIFont *_Nonnull)font maxSize:(CGSize)maxSize;
+- (CGSize)lz_sizeWithFont:(UIFont *_Nonnull)font maxSize:(CGSize)maxSize;
 
-+ (NSString *_Nonnull)stringWithMoneyAmount:(double)amount;
++ (NSString *_Nonnull)lz_stringWithMoneyAmount:(double)amount;
 
-+ (NSString *_Nonnull)stringIntervalFrom:(NSDate *_Nonnull)start to:(NSDate *_Nonnull)end;
++ (NSString *_Nonnull)lz_stringIntervalFrom:(NSDate *_Nonnull)start to:(NSDate *_Nonnull)end;
 
 //邮箱
-+ (BOOL)validateEmail:(NSString *_Nonnull)email;
++ (BOOL)lz_validateEmail:(NSString *_Nonnull)email;
 
-- (BOOL)isEmptyString;
+- (BOOL)lz_isEmptyString;
 
 /// 拼接了`文档目录`的全路径
 @property (nullable, nonatomic, readonly) NSString *lz_documentDirectory;

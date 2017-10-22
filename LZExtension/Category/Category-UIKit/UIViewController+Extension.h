@@ -20,7 +20,6 @@
  维护新项目，快速定位当前控制器
  
  博客地址-->
- http://www.cocoachina.com/ios/20150717/12623.html
  
  */
 @interface UIViewController (Extension)

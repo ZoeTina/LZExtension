@@ -13,7 +13,7 @@
  */
 @interface NSArray (Extension)
 
-- (NSString *_Nonnull)descriptionWithLocale:(id _Nullable)locale ;
+- (NSString *_Nonnull)lz_descriptionWithLocale:(id _Nullable)locale ;
 
 /**
  *  通过给出的索引在安全的情况下获取一个对象(如果数组本身为空或者索引超出了范围则返回nil)

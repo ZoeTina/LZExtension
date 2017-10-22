@@ -10,169 +10,169 @@
 
 @implementation UIView (Extension)
 
-- (void)setX:(CGFloat)x {
+- (void)setLz_x:(CGFloat)lz_x{
     CGRect frame = self.frame;
-    frame.origin.x = x;
+    frame.origin.x = lz_x;
     self.frame = frame;
 }
 
-- (CGFloat)x {
+- (CGFloat)lz_x {
     return self.frame.origin.x;
 }
 
-- (void)setY:(CGFloat)y {
+- (void)setLz_y:(CGFloat)lz_y {
     CGRect frame = self.frame;
-    frame.origin.y = y;
+    frame.origin.y = lz_y;
     self.frame = frame;
 }
 
-- (CGFloat)y {
+- (CGFloat)lz_y {
     return self.frame.origin.y;
 }
 
-- (void)setWidth:(CGFloat)width {
+- (void)setLz_width:(CGFloat)lz_width {
     CGRect frame = self.frame;
-    frame.size.width = width;
+    frame.size.width = lz_width;
     self.frame = frame;
 }
 
-- (CGFloat)width {
+- (CGFloat)lz_width {
     return self.frame.size.width;
 }
 
-- (void)setHeight:(CGFloat)height {
+- (void)setLz_height:(CGFloat)lz_height {
     CGRect frame = self.frame;
-    frame.size.height = height;
+    frame.size.height = lz_height;
     self.frame = frame;
 }
 
-- (CGFloat)height {
+- (CGFloat)lz_height {
     return self.frame.size.height;
 }
 
-- (void)setSize:(CGSize)size {
-    //    self.width = size.width;
-    //    self.height = size.height;
+- (void)setLz_size:(CGSize)lz_size {
+    //    self.lz_width = size.width;
+    //    self.lz_height = size.height;
     CGRect frame = self.frame;
-    frame.size = size;
+    frame.size = lz_size;
     self.frame = frame;
 }
 
-- (CGSize)size {
+- (CGSize)lz_size {
     return self.frame.size;
 }
 
-- (void)setOrigin:(CGPoint)origin {
+- (void)setLz_origin:(CGPoint)lz_origin {
     CGRect frame = self.frame;
-    frame.origin = origin;
+    frame.origin = lz_origin;
     self.frame = frame;
 }
 
-- (CGPoint)origin {
+- (CGPoint)lz_origin {
     return self.frame.origin;
 }
 
-- (void)setCenterX:(CGFloat)centerX {
+- (void)setLz_centerX:(CGFloat)lz_centerX {
     CGPoint center = self.center;
-    center.x = centerX;
+    center.x = lz_centerX;
     self.center = center;
 }
 
-- (CGFloat)centerX {
+- (CGFloat)lz_centerX {
     return self.center.x;
 }
 
-- (void)setCenterY:(CGFloat)centerY {
+- (void)setLz_centerY:(CGFloat)lz_centerY {
     CGPoint center = self.center;
-    center.y = centerY;
+    center.y = lz_centerY;
     self.center = center;
 }
 
-- (CGFloat)centerY {
+- (CGFloat)lz_centerY {
     return self.center.y;
 }
 
 
-- (CGFloat)left {
+- (CGFloat)lz_left {
     return self.frame.origin.x;
 }
 
-- (void)setLeft:(CGFloat)x {
+- (void)setLz_left:(CGFloat)lz_left {
+
     CGRect frame = self.frame;
-    frame.origin.x = x;
+    frame.origin.x = lz_left;
     self.frame = frame;
 }
 
-- (CGFloat)top {
+- (CGFloat)lz_top {
     return self.frame.origin.y;
 }
 
-- (void)setTop:(CGFloat)y {
+- (void)setLz_top:(CGFloat)lz_top {
     CGRect frame = self.frame;
-    frame.origin.y = y;
+    frame.origin.y = lz_top;
     self.frame = frame;
 }
 
-- (CGFloat)right {
+- (CGFloat)lz_right {
     return self.frame.origin.x + self.frame.size.width;
 }
 
-- (void)setRight:(CGFloat)right {
+- (void)setLz_right:(CGFloat)lz_right {
     CGRect frame = self.frame;
-    frame.origin.x = right - frame.size.width;
+    frame.origin.x = lz_right - frame.size.width;
     self.frame = frame;
 }
 
-- (CGFloat)bottom {
+- (CGFloat)lz_bottom {
     return self.frame.origin.y + self.frame.size.height;
 }
 
-- (void)setBottom:(CGFloat)bottom {
+- (void)setLz_bottom:(CGFloat)lz_bottom {
     CGRect frame = self.frame;
-    frame.origin.y = bottom - frame.size.height;
+    frame.origin.y = lz_bottom - frame.size.height;
     self.frame = frame;
 }
 
-- (CGPoint)viewOrigin {
+- (CGPoint)lz_viewOrigin {
     
     return self.frame.origin;
 }
 
-- (void)setViewOrigin:(CGPoint)viewOrigin {
+- (void)setLz_viewOrigin:(CGPoint)lz_viewOrigin {
     
     CGRect frame = self.frame;
-    frame.origin = viewOrigin;
+    frame.origin = lz_viewOrigin;
     self.frame   = frame;
 }
 
-- (CGSize)viewSize {
+- (CGSize)lz_viewSize {
     
     return self.frame.size;
 }
 
-- (void)setViewSize:(CGSize)viewSize {
-    
+- (void)setLz_viewSize:(CGSize)lz_viewSize {
     CGRect frame = self.frame;
-    frame.size   = viewSize;
+    frame.size   = lz_viewSize;
     self.frame   = frame;
 }
 
-- (CGFloat)middleX {
+- (CGFloat)lz_middleX {
     
     return CGRectGetWidth(self.bounds) / 2.f;
 }
 
-- (CGFloat)middleY {
+- (CGFloat)lz_middleY {
     
     return CGRectGetHeight(self.bounds) / 2.f;
 }
 
-- (CGPoint)middlePoint {
+- (CGPoint)lz_middlePoint {
     
     return CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
 }
 
-- (void)addTarget:(nonnull id)target action:(nonnull SEL)action
+- (void)lz_addTarget:(nonnull id)target action:(nonnull SEL)action
 {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:target
                                                                          action:action];
@@ -201,7 +201,7 @@
     return view;
 }
 
-- (BOOL)isShowingOnKeyWindow
+- (BOOL)lz_isShowingOnKeyWindow
 {
     // 主窗口
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
@@ -224,14 +224,14 @@
  */
 @implementation UIView (Extensions)
 
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame backgroundColor:(UIColor * _Nonnull)backgroundColor {
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame backgroundColor:(UIColor * _Nonnull)backgroundColor {
     UIView *view = [[UIView alloc] initWithFrame:frame];
     [view setBackgroundColor:backgroundColor];
     
     return view;
 }
 
-- (void)createBordersWithColor:(UIColor * _Nonnull)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width {
+- (void)lz_createBordersWithColor:(UIColor * _Nonnull)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width {
     self.layer.borderWidth = width;
     self.layer.cornerRadius = radius;
     self.layer.shouldRasterize = NO;
@@ -246,7 +246,7 @@
     CGColorSpaceRelease(space);
 }
 
-- (void)removeBorders {
+- (void)lz_removeBorders {
     self.layer.borderWidth = 0;
     self.layer.cornerRadius = 0;
     self.layer.borderColor = nil;
@@ -254,7 +254,7 @@
 
 
 
-- (void)createRectShadowWithOffset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
+- (void)lz_createRectShadowWithOffset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowOffset = offset;
@@ -262,7 +262,7 @@
     self.layer.masksToBounds = NO;
 }
 
-- (void)createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
+- (void)lz_createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowOffset = offset;
@@ -273,18 +273,18 @@
     self.layer.masksToBounds = NO;
 }
 
-- (void)removeShadow {
+- (void)lz_removeShadow {
     [self.layer setShadowColor:[[UIColor clearColor] CGColor]];
     [self.layer setShadowOpacity:0.0f];
     [self.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
 }
 
-- (void)setCornerRadius:(CGFloat)radius {
+- (void)lz_setCornerRadius:(CGFloat)radius {
     self.layer.cornerRadius = radius;
     [self.layer setMasksToBounds:YES];
 }
 
-- (void)shakeView {
+- (void)lz_shakeView {
     CAKeyframeAnimation *shake = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     shake.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-5.0f, 0.0f, 0.0f)], [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(5.0f, 0.0f, 0.0f)]];
     shake.autoreverses = YES;
@@ -294,7 +294,7 @@
     [self.layer addAnimation:shake forKey:@"shake"];
 }
 
-- (void)pulseViewWithDuration:(CGFloat)duration {
+- (void)lz_pulseViewWithDuration:(CGFloat)duration {
     [UIView animateWithDuration:duration / 6 animations:^{
         [self setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
     } completion:^(BOOL finished) {
@@ -330,7 +330,7 @@
     }];
 }
 
-- (void)heartbeatViewWithDuration:(CGFloat)duration {
+- (void)lz_heartbeatViewWithDuration:(CGFloat)duration {
     float maxSize = 1.4f, durationPerBeat = 0.5f;
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
@@ -354,7 +354,7 @@
     [self.layer addAnimation:animation forKey:@"heartbeat"];
 }
 
-- (void)applyMotionEffects {
+- (void)lz_applyMotionEffects {
     UIInterpolatingMotionEffect *horizontalEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     horizontalEffect.minimumRelativeValue = @(-10.0f);
     horizontalEffect.maximumRelativeValue = @(10.0f);
@@ -371,7 +371,7 @@
 
 
 
-- (UIImage * _Nonnull)screenshot {
+- (UIImage * _Nonnull)lz_screenshot {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
     
     [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
@@ -385,19 +385,19 @@
     return image;
 }
 
-- (UIImage * _Nonnull)saveScreenshot {
-    UIImage *image = [self screenshot];
+- (UIImage * _Nonnull)lz_saveScreenshot {
+    UIImage *image = [self lz_screenshot];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     
     return image;
 }
 
-- (void)removeAllSubviews {
+- (void)lz_removeAllSubviews {
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 // 获取指定视图在window中的位置
-+ (CGRect)getFrameInWindow:(UIView *)view
++ (CGRect)lz_getFrameInWindow:(UIView *)view
 {
     // 改用[UIApplication sharedApplication].keyWindow.rootViewController.view，防止present新viewController坐标转换不准问题
     return [view.superview convertRect:view.frame toView:[UIApplication sharedApplication].keyWindow.rootViewController.view];

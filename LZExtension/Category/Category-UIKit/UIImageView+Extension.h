@@ -21,8 +21,8 @@
  *
  *  @return 返回创建的UIImageView实例
  */
-+ (instancetype _Nonnull)initWithImage:(UIImage * _Nonnull)image
-                                 frame:(CGRect)rect;
++ (instancetype _Nonnull)lz_initWithImage:(UIImage * _Nonnull)image
+                                    frame:(CGRect)rect;
 
 /**
  *  根据指定image、frame、center创建一个UIImageView
@@ -33,9 +33,9 @@
  *
  *  @return 返回创建的UIImageView实例
  */
-+ (instancetype _Nonnull)initWithImage:(UIImage * _Nonnull)image
-                                  size:(CGSize)size
-                                center:(CGPoint)center;
++ (instancetype _Nonnull)lz_initWithImage:(UIImage * _Nonnull)image
+                                     size:(CGSize)size
+                                   center:(CGPoint)center;
 
 /**
  *  根据指定image、center创建一个UIImageView
@@ -45,8 +45,8 @@
  *
  *  @return 返回创建的UIImageView实例
  */
-+ (instancetype _Nonnull)initWithImage:(UIImage * _Nonnull)image
-                                center:(CGPoint)center;
++ (instancetype _Nonnull)lz_initWithImage:(UIImage * _Nonnull)image
+                                   center:(CGPoint)center;
 
 /**
  *  根据指定tintColor、image创建一个模板UIImageView
@@ -56,8 +56,8 @@
  *
  *  @return 返回创建的UIImageView实例
  */
-+ (instancetype _Nonnull)initWithImageAsTemplate:(UIImage * _Nonnull)image
-                                       tintColor:(UIColor * _Nonnull)tintColor;
++ (instancetype _Nonnull)lz_initWithImageAsTemplate:(UIImage * _Nonnull)image
+                                          tintColor:(UIColor * _Nonnull)tintColor;
 
 /**
  *  创建一个有阴影效果
@@ -67,17 +67,17 @@
  *  @param offset  阴影的offset(偏移量)
  *  @param opacity S阴影的opacity(不透明度)
  */
-- (void)setImageShadowColor:(UIColor * _Nonnull)color
-                     radius:(CGFloat)radius
-                     offset:(CGSize)offset
-                    opacity:(CGFloat)opacity;
+- (void)lz_setImageShadowColor:(UIColor * _Nonnull)color
+                        radius:(CGFloat)radius
+                        offset:(CGSize)offset
+                       opacity:(CGFloat)opacity;
 
 /**
  *  减掉超出UIImage Bounds范围的部分
  *
  *  @param image The mask UIImage
  */
-- (void)setMaskImage:(UIImage * _Nonnull)image;
+- (void)lz_setMaskImage:(UIImage * _Nonnull)image;
 
 
 
@@ -86,7 +86,7 @@
 
  @param size 子视图尺寸
  */
-- (void)setFrameInSuperViewCenterWithSize:(CGSize)size;
+- (void)lz_setFrameInSuperViewCenterWithSize:(CGSize)size;
 
 
 @end

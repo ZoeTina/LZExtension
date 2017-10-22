@@ -25,12 +25,12 @@
  *
  *  @return 返回创建的UIScrollView实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                           contentSize:(CGSize)contentSize
-                         clipsToBounds:(BOOL)clipsToBounds
-                         pagingEnabled:(BOOL)pagingEnabled
-                  showScrollIndicators:(BOOL)showScrollIndicators
-                              delegate:(id<UIScrollViewDelegate> _Nullable)delegate;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                              contentSize:(CGSize)contentSize
+                            clipsToBounds:(BOOL)clipsToBounds
+                            pagingEnabled:(BOOL)pagingEnabled
+                     showScrollIndicators:(BOOL)showScrollIndicators
+                                 delegate:(id<UIScrollViewDelegate> _Nullable)delegate;
 
 
 @end

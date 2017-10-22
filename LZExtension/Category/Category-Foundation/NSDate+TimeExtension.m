@@ -13,7 +13,7 @@ static NSDateFormatter *dateFormatter;
 @implementation NSDate (TimeExtension)
 
 
-+(NSDateFormatter *)defaultFormatter
++(NSDateFormatter *)lz_defaultFormatter
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -30,10 +30,10 @@ static NSDateFormatter *dateFormatter;
  *
  *  @return return value description
  */
-+ (NSDate *)dateFromString:(NSString *)timeStr
-                    format:(NSString *)format
++ (NSDate *)lz_dateFromString:(NSString *)timeStr
+                       format:(NSString *)format
 {
-    NSDateFormatter *dateFormatter = [NSDate defaultFormatter];
+    NSDateFormatter *dateFormatter = [NSDate lz_defaultFormatter];
     [dateFormatter setDateFormat:format];
     NSDate *date = [dateFormatter dateFromString:timeStr];
     return date;
@@ -46,7 +46,7 @@ static NSDateFormatter *dateFormatter;
  *
  *  @return 返回时间戳
  */
-+ (NSInteger)timestampFromDate:(NSDate *)date
++ (NSInteger)lz_timestampFromDate:(NSDate *)date
 {
     return (long)[date timeIntervalSince1970];
 }
@@ -60,11 +60,11 @@ static NSDateFormatter *dateFormatter;
  *
  *  @return 返回时间戳的字符串
  */
-+(NSInteger)timestampFromString:(NSString *)timeStr
-                          format:(NSString *)format
++(NSInteger)lz_timestampFromString:(NSString *)timeStr
+                            format:(NSString *)format
 {
-    NSDate *date = [NSDate dateFromString:timeStr format:format];
-    return [NSDate timestampFromDate:date];
+    NSDate *date = [NSDate lz_dateFromString:timeStr format:format];
+    return [NSDate lz_timestampFromDate:date];
 }
 
 /**
@@ -75,11 +75,11 @@ static NSDateFormatter *dateFormatter;
  *
  *  @return 返回字符串格式时间
  */
-+ (NSString *)dateStrFromCstampTime:(NSInteger)timeStamp
-                     withDateFormat:(NSString *)format
++ (NSString *)lz_dateStrFromCstampTime:(NSInteger)timeStamp
+                        withDateFormat:(NSString *)format
 {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeStamp];
-    return [NSDate datestrFromDate:date withDateFormat:format];
+    return [NSDate lz_datestrFromDate:date withDateFormat:format];
 }
 
 /**
@@ -90,10 +90,10 @@ static NSDateFormatter *dateFormatter;
  *
  *  @return 返回字符串格式时间
  */
-+ (NSString *)datestrFromDate:(NSDate *)date
-               withDateFormat:(NSString *)format
++ (NSString *)lz_datestrFromDate:(NSDate *)date
+                  withDateFormat:(NSString *)format
 {
-    NSDateFormatter* dateFormat = [NSDate defaultFormatter];
+    NSDateFormatter* dateFormat = [NSDate lz_defaultFormatter];
     [dateFormat setDateFormat:format];
     return [dateFormat stringFromDate:date];
 }

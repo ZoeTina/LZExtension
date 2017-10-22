@@ -10,7 +10,7 @@
 
 @implementation UIWindow (Extension)
 
-- (UIImage * _Nonnull)takeScreenshotAndSave:(BOOL)save {
+- (UIImage * _Nonnull)lz_takeScreenshotAndSave:(BOOL)save {
     BOOL ignoreOrientation = [[[UIDevice currentDevice] systemVersion] compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending;//此API使用与iOS 8.0以上
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
@@ -60,13 +60,13 @@
     return image;
 }
 
-- (UIImage * _Nonnull)takeScreenshot {
-    return [self takeScreenshotAndSave:NO];
+- (UIImage * _Nonnull)lz_takeScreenshot {
+    return [self lz_takeScreenshotAndSave:NO];
 }
 
-- (void)takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^ _Nullable)(UIImage *image))completion {
+- (void)lz_takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^ _Nullable)(UIImage *image))completion {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        completion([self takeScreenshotAndSave:save]);
+        completion([self lz_takeScreenshotAndSave:save]);
     });
 }
 

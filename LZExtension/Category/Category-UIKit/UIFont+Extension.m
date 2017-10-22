@@ -12,7 +12,7 @@
 /**
  *  根据不同的设置返回不同的字体
  */
-+ (CGFloat)fontToSize:(CGFloat)fontSize
++ (CGFloat)lz_fontToSize:(CGFloat)fontSize
 {
     float widthR = [UIScreen mainScreen].bounds.size.width/375.0;
     float tempFontSize = fontSize;
@@ -21,14 +21,14 @@
     return tempFontSize;
 }
 
-+ (UIFont*)systemFontOfSizeAdapter:(CGFloat)fontSize
++ (UIFont*)lz_systemFontOfSizeAdapter:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:[UIFont fontToSize:fontSize]];
+    return [UIFont systemFontOfSize:[UIFont lz_fontToSize:fontSize]];
 }
 
-+ (UIFont*)fontWithName:(NSString *)fontName sizeAdapter:(CGFloat)fontSize
++ (UIFont*)lz_fontWithName:(NSString *)fontName sizeAdapter:(CGFloat)fontSize
 {
-    return [UIFont fontWithName:fontName size:[UIFont fontToSize:fontSize]];
+    return [UIFont fontWithName:fontName size:[UIFont lz_fontToSize:fontSize]];
 }
 
 @end

@@ -22,15 +22,15 @@
  *
  *  @return 返回被创建的随机值
  */
-+ (NSInteger)randomIntBetweenMin:(NSInteger)minValue
-                          andMax:(NSInteger)maxValue;
++ (NSInteger)lz_randomIntBetweenMin:(NSInteger)minValue
+                             andMax:(NSInteger)maxValue;
 
 /**
  *  创建一个随机的float值
  *
  *  @return 返回被创建的随机float值
  */
-+ (CGFloat)randomFloat;
++ (CGFloat)lz_randomFloat;
 
 /**
  *  在指定范围内创建一个随机float值
@@ -40,7 +40,7 @@
  *
  *  @return 返回被创建的随机值
  */
-+ (CGFloat)randomFloatBetweenMin:(CGFloat)minValue
++ (CGFloat)lz_randomFloatBetweenMin:(CGFloat)minValue
                           andMax:(CGFloat)maxValue;
 
 @end

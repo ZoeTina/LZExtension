@@ -23,7 +23,7 @@
  *
  *  @return 处理后的Image
  */
-+ (UIImage * _Nonnull)circleImageWithName:(NSString * _Nonnull)name borderWidth:(CGFloat)borderWidth borderColor:(UIColor *_Nonnull)borderColor;
++ (UIImage * _Nonnull)lz_circleImageWithName:(NSString * _Nonnull)name borderWidth:(CGFloat)borderWidth borderColor:(UIColor *_Nonnull)borderColor;
 
 /**
  *  给图片增加圆角
@@ -32,7 +32,7 @@
  *
  *  @return 处理后的Image
  */
-- (UIImage * _Nonnull)imageByRoundCornerRadius:(CGFloat)radius;
+- (UIImage * _Nonnull)lz_imageByRoundCornerRadius:(CGFloat)radius;
 /**
  *  给图片增加圆角及边框
  *
@@ -44,7 +44,7 @@
  *
  *  @return 处理后的Image
  */
-- (UIImage * _Nonnull)imageByRoundCornerRadius:(CGFloat)radius
+- (UIImage * _Nonnull)lz_imageByRoundCornerRadius:(CGFloat)radius
                                    borderWidth:(CGFloat)borderWidth
                                    borderColor:(UIColor * _Nullable)borderColor;
 
@@ -56,7 +56,7 @@
  *
  *  @return 返回指定rect所创建的image
  */
-- (UIImage * _Nonnull)imageAtRect:(CGRect)rect;
+- (UIImage * _Nonnull)lz_imageAtRect:(CGRect)rect;
 
 /**
  *  创建指定color的image
@@ -65,7 +65,7 @@
  *
  *  @return 返回创建的image
  */
-+ (UIImage * _Nonnull)imageWithColor:(UIColor * _Nonnull)color;
++ (UIImage * _Nonnull)lz_imageWithColor:(UIColor * _Nonnull)color;
 
 /**
  *  将图片剪裁至目标尺寸(将图片直接重绘入目标尺寸画布，原长/宽比例为目标尺寸长/宽比例)
@@ -74,7 +74,7 @@
  *
  *  @return 返回处理后的image
  */
-- (UIImage * _Nullable)imageByScalingToSize:(CGSize)targetSize;
+- (UIImage * _Nullable)lz_imageByScalingToSize:(CGSize)targetSize;
 
 /**
  *  将图片剪裁至目标尺寸(将图片按比例压缩后重绘入目标尺寸画布，并裁剪掉多余部分，原长/宽比例不变)
@@ -83,7 +83,7 @@
  *
  *  @return 返回处理后的image
  */
-- (UIImage * _Nullable)imageByScalingAndCroppingToTargetSize:(CGSize)targetSize;
+- (UIImage * _Nullable)lz_imageByScalingAndCroppingToTargetSize:(CGSize)targetSize;
 
 
 /**
@@ -93,7 +93,7 @@
  *
  *  @return 返回处理后的image
  */
-- (UIImage * _Nonnull)edgeInsetsImage:(UIEdgeInsets)insets;
+- (UIImage * _Nonnull)lz_edgeInsetsImage:(UIEdgeInsets)insets;
 
 /**
  * 按比例拉伸/缩放图片
@@ -102,7 +102,7 @@
  *
  *  @return 返回处理后的image
  */
-- (UIImage * _Nullable)imageByResizeToScale:(CGFloat)scale;
+- (UIImage * _Nullable)lz_imageByResizeToScale:(CGFloat)scale;
 
 /**
  * 按目标尺寸以最大边缩小图片
@@ -112,7 +112,7 @@
  *
  *  @return 返回处理后的image
  */
-- (UIImage * _Nullable)imageByNarrowWithMaxSize:(CGSize)size;
+- (UIImage * _Nullable)lz_imageByNarrowWithMaxSize:(CGSize)size;
 
 
 /**
@@ -122,7 +122,7 @@
  *
  *  @return 返回旋转后的image
  */
-- (UIImage * _Nonnull)imageRotatedByRadians:(CGFloat)radians;
+- (UIImage * _Nonnull)lz_imageRotatedByRadians:(CGFloat)radians;
 
 /**
  *  根据指定degrees旋转image
@@ -131,7 +131,7 @@
  *
  *  @return 返回旋转后的image
  */
-- (UIImage * _Nonnull)imageRotatedByDegrees:(CGFloat)degrees;
+- (UIImage * _Nonnull)lz_imageRotatedByDegrees:(CGFloat)degrees;
 
 
 
@@ -144,28 +144,28 @@
  *
  *  @return 图片
  */
-+ (UIImage * _Nonnull)setImageAlpha:(UIImage * _Nonnull)image alpha:(CGFloat)alpha;
++ (UIImage * _Nonnull)lz_setImageAlpha:(UIImage * _Nonnull)image alpha:(CGFloat)alpha;
 
 /**
  *  检查image是否有alpha属性
  *
  *  @return Returns YES有，NO无
  */
-- (BOOL)hasAlpha;
+- (BOOL)lz_hasAlpha;
 
 /**
  *  移除image的alpha属性
  *
  *  @return 没有alpha属性的image
  */
-- (UIImage * _Nonnull)removeAlpha;
+- (UIImage * _Nonnull)lz_removeAlpha;
 
 /**
  *  使用白色填充alpha属性
  *
  *  @return 填充后的image
  */
-- (UIImage * _Nonnull)fillAlpha;
+- (UIImage * _Nonnull)lz_fillAlpha;
 
 /**
  *  使用指定color填充alpha属性
@@ -174,7 +174,7 @@
  *
  *  @return 填充指定颜色alpha属性后的图片
  */
-- (UIImage * _Nonnull)fillAlphaWithColor:(UIColor * _Nonnull)color;
+- (UIImage * _Nonnull)lz_fillAlphaWithColor:(UIColor * _Nonnull)color;
 
 
 #pragma mark - 图片重绘颜色
@@ -185,7 +185,7 @@
  *
  *  @return 重绘颜色后的Image
  */
-- (UIImage * _Nonnull)imageWithTintColor:(UIColor * _Nonnull)tintColor;
+- (UIImage * _Nonnull)lz_imageWithTintColor:(UIColor * _Nonnull)tintColor;
 
 /**
  *  渐变色图重绘颜色
@@ -194,7 +194,7 @@
  *
  *  @return 重绘颜色后的Image
  */
-- (UIImage * _Nonnull)imageWithGradientTintColor:(UIColor * _Nonnull)tintColor;
+- (UIImage * _Nonnull)lz_imageWithGradientTintColor:(UIColor * _Nonnull)tintColor;
 
 #pragma mark - 翻转图片
 /**
@@ -202,21 +202,21 @@
  *
  *  @return 返回翻转后的image
  */
-- (UIImage * _Nonnull)flipImageHorizontally;
+- (UIImage * _Nonnull)lz_flipImageHorizontally;
 
 /**
  *  垂直翻转image
  *
  *  @return 返回翻转后的iamge
  */
-- (UIImage * _Nonnull)flipImageVertically;
+- (UIImage * _Nonnull)lz_flipImageVertically;
 
 /**
  *  垂直并水平翻转image
  *
  *  @return 返回翻转后的iamge
  */
-- (UIImage * _Nullable)flipImageVerticallyAndHorizontally;
+- (UIImage * _Nullable)lz_flipImageVerticallyAndHorizontally;
 
 
 #pragma mark - 图片效果
@@ -225,22 +225,22 @@
  *
  *  @return 返回处理后的iamge
  */
-- (UIImage * _Nonnull)imageLightEffect;
+- (UIImage * _Nonnull)lz_imageLightEffect;
 /**
  * 图片light+效果
  */
-- (UIImage *_Nonnull)imageExtraLightEffect;
+- (UIImage *_Nonnull)lz_imageExtraLightEffect;
 /**
  * 图片dark效果
  */
-- (UIImage *_Nonnull)imageDarkEffect;
+- (UIImage *_Nonnull)lz_imageDarkEffect;
 /**
  * 图片模糊效果
  */
-- (UIImage *_Nonnull)imageBlurEffect;
+- (UIImage *_Nonnull)lz_imageBlurEffect;
 
 
 //图片压缩到指定大小
-- (UIImage *_Nonnull)imageByScalingAndCroppingForSize:(CGSize)targetSize;
+- (UIImage *_Nonnull)lz_imageByScalingAndCroppingForSize:(CGSize)targetSize;
 
 @end

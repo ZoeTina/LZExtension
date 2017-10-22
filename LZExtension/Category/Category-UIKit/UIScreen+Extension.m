@@ -22,7 +22,7 @@
     return [UIScreen mainScreen].scale;
 }
 
-+ (BOOL)isRetina {
++ (BOOL)lzs_isRetina {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && (self.lz_scale == 2.0 || self.lz_scale == 3.0)) {
         return YES;
     } else {
@@ -30,7 +30,7 @@
     }
 }
 
-+ (BOOL)isRetinaHD {
++ (BOOL)lz_isRetinaHD {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && (self.lz_scale == 3.0)) {
         return YES;
     } else {
@@ -38,11 +38,11 @@
     }
 }
 
-+ (CGFloat)brightness {
++ (CGFloat)lz_brightness {
     return [UIScreen mainScreen].brightness;
 }
 
-+ (void)setBrightness:(CGFloat)brightness {
++ (void)lz_setBrightness:(CGFloat)brightness {
     [[UIScreen mainScreen] setBrightness:brightness];
 }
 @end

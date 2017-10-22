@@ -19,14 +19,14 @@
  *
  *  @return 返回被转换为UTF8字符串格式的NSData数据
  */
-+ (NSString * _Nonnull)convertToUTF8String:(NSData * _Nonnull)data;
++ (NSString * _Nonnull)lz_convertToUTF8String:(NSData * _Nonnull)data;
 
 /**
  *  转换自身为UTF8格式字符串
  *
  *  @return 返回被转换为UTF8格式字符串的自身
  */
-- (NSString * _Nonnull)convertToUTF8String;
+- (NSString * _Nonnull)lz_convertToUTF8String;
 
 /**
  *  将给出的NSData数据转换为ASCII格式的字符串
@@ -35,14 +35,14 @@
  *
  *  @return 返回被转换为ASCII字符串格式的NSData数据
  */
-+ (NSString * _Nonnull)convertToASCIIString:(NSData * _Nonnull)data;
++ (NSString * _Nonnull)lz_convertToASCIIString:(NSData * _Nonnull)data;
 
 /**
  *  转换自身为ASCII格式字符串
  *
  *  @return 返回被转换为ASCII格式字符串的自身
  */
-- (NSString * _Nonnull)convertToASCIIString;
+- (NSString * _Nonnull)lz_convertToASCIIString;
 
 /**
  *  转换自己的UUID为字符串
@@ -50,6 +50,6 @@
  *
  *  @return 返回将UUID转换为字符串的本身
  */
-- (NSString * _Nullable)convertUUIDToString;
+- (NSString * _Nullable)lz_convertUUIDToString;
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation NSString (Extension)
 /*手机号码验证 MODIFIED BY HELENSONG*/
-- (BOOL) isValidateMobile {
+- (BOOL) lz_isValidateMobile {
     //手机号以13, 15, 17, 18开头，八个 \d 数字字符
     NSString *phoneRegex = @"^((13[0-9])|(15[^4,\\D])|(17[0-9])|(18[0,0-9]))\\d{8}$";
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
@@ -20,11 +20,11 @@
 }
 
 
-- (BOOL)validateContainsSpace {
+- (BOOL)lz_validateContainsSpace {
     return [self rangeOfString:@" "].location == NSNotFound;
 }
 
-- (NSString *)ageFromBirthday {
+- (NSString *)lz_ageFromBirthday {
     if (self.length != 10 ||
         [self characterAtIndex:4] != '.' ||
         [self characterAtIndex:7] != '.') {
@@ -51,13 +51,13 @@
     return [NSString stringWithFormat:@"%zd", age];
 }
 
-- (NSString *)ageFromIDCard {
-    NSString *birthday = [self birthdayFromIDCard];
+- (NSString *)lz_ageFromIDCard {
+    NSString *birthday = [self lz_birthdayFromIDCard];
     
-    return [birthday ageFromBirthday];
+    return [birthday lz_ageFromBirthday];
 }
 
-- (NSString*)birthdayFromIDCard {
+- (NSString*)lz_birthdayFromIDCard {
     NSString *result = @"未知";
     if (self.length == 15) {
         NSMutableString *birthString = [[self substringWithRange:NSMakeRange(6, 6)] mutableCopy];
@@ -75,7 +75,7 @@
     return result;
 }
 
-- (NSString*)sexFromIDCard {
+- (NSString*)lz_sexFromIDCard {
     NSString *sexString = @"";
     
     if (self.length == 15) {
@@ -97,12 +97,12 @@
 }
 
 
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize {
+- (CGSize)lz_sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize {
     NSDictionary *attrs = @{NSFontAttributeName : font};
     return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
 }
 
-+ (NSString *)stringWithMoneyAmount:(double)amount {
++ (NSString *)lz_stringWithMoneyAmount:(double)amount {
     BOOL minus = amount < 0;
     if (minus) {
         amount = -amount;
@@ -128,7 +128,7 @@
     return toString;
 }
 
-+ (NSString *)stringIntervalFrom:(NSDate *)start to:(NSDate *)end {
++ (NSString *)lz_stringIntervalFrom:(NSDate *)start to:(NSDate *)end {
     NSInteger interval = end.timeIntervalSince1970 - start.timeIntervalSince1970;
     if (interval <= 0) {
         return @"刚刚";
@@ -163,13 +163,13 @@
     return [NSString stringWithFormat:@"%zd 年前", interval / 365];
 }
 //邮箱
-+ (BOOL)validateEmail:(NSString *)email {
++ (BOOL)lz_validateEmail:(NSString *)email {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
 }
 
-- (BOOL)isEmptyString {
+- (BOOL)lz_isEmptyString {
     return self.length == 0 || [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0;
 }
 
@@ -204,7 +204,7 @@
     
     CC_MD5(str, (CC_LONG)strlen(str), buffer);
     
-    return [self stringFromBytes:buffer length:CC_MD5_DIGEST_LENGTH];
+    return [self lz_stringFromBytes:buffer length:CC_MD5_DIGEST_LENGTH];
 }
 
 /**
@@ -215,7 +215,7 @@
  *
  *  @return 字符串表示形式
  */
-- (NSString *)stringFromBytes:(uint8_t *)bytes length:(int)length {
+- (NSString *)lz_stringFromBytes:(uint8_t *)bytes length:(int)length {
     NSMutableString *stringM = [NSMutableString string];
     
     for (int i = 0; i < length; i++) {

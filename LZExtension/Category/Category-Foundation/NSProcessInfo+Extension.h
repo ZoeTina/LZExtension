@@ -18,6 +18,6 @@
  *
  *  @return 返回当前APP对CPU的使用量
  */
-+ (float)currentAppCPUUsage;
++ (float)lz_currentAppCPUUsage;
 
 @end

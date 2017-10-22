@@ -18,6 +18,6 @@
  *
  *  @return YES可用，NO不可用
  */
-- (BOOL)isValid;
+- (BOOL)lz_isValid;
 
 @end

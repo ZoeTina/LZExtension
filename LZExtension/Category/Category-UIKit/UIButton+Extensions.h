@@ -20,7 +20,7 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame;
 
 /**
  *  创建一个指定frame且有title的UIButton
@@ -30,7 +30,7 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
                                  title:(NSString * _Nullable)title;
 
 /**
@@ -42,7 +42,7 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
                                  title:(NSString * _Nullable)title
                        backgroundImage:(UIImage * _Nullable)backgroundImage;
 
@@ -56,10 +56,10 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 title:(NSString * _Nullable)title
-                       backgroundImage:(UIImage * _Nullable)backgroundImage
-            highlightedBackgroundImage:(UIImage * _Nullable)highlightedBackgroundImage;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    title:(NSString * _Nullable)title
+                          backgroundImage:(UIImage * _Nullable)backgroundImage
+               highlightedBackgroundImage:(UIImage * _Nullable)highlightedBackgroundImage;
 
 /**
  *  创建一个指定frame且有title、常规背景色的UIButton
@@ -70,9 +70,9 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 title:(NSString * _Nonnull)title
-                                 color:(UIColor * _Nonnull)color;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    title:(NSString * _Nonnull)title
+                                    color:(UIColor * _Nonnull)color;
 
 /**
  *  创建一个指定frame且有title、常规背景色、高亮背景色的UIButton
@@ -84,10 +84,10 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 title:(NSString * _Nonnull)title
-                                 color:(UIColor * _Nonnull)color
-                      highlightedColor:(UIColor * _Nonnull)highlightedColor;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    title:(NSString * _Nonnull)title
+                                    color:(UIColor * _Nonnull)color
+                         highlightedColor:(UIColor * _Nonnull)highlightedColor;
 
 /**
  *  创建一个指定frame且有常规背景色的UIButton
@@ -97,8 +97,8 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 color:(UIColor * _Nonnull)color;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    color:(UIColor * _Nonnull)color;
 
 /**
  *  创建一个指定frame且有常规色、高亮背景色的UIButton
@@ -109,9 +109,9 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 color:(UIColor * _Nonnull)color
-                      highlightedColor:(UIColor * _Nonnull)highlightedColor;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    color:(UIColor * _Nonnull)color
+                         highlightedColor:(UIColor * _Nonnull)highlightedColor;
 
 /**
  *  创建一个指定frame且有常规图片的UIBUtton
@@ -121,8 +121,8 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 image:(UIImage * _Nonnull)image;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    image:(UIImage * _Nonnull)image;
 
 /**
  *  创建一个指定frame且有常规图片、高亮图片的UIBUtton
@@ -133,9 +133,9 @@
  *
  *  @return 返回创建的UIButton实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 image:(UIImage * _Nonnull)image
-                      highlightedImage:(UIImage * _Nullable)highlightedImage;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    image:(UIImage * _Nonnull)image
+                         highlightedImage:(UIImage * _Nullable)highlightedImage;
 
 
 /**
@@ -143,7 +143,7 @@
  *
  *  @param color 字体常规颜色, 高亮颜色会被自动创建
  */
-- (void)setTitleColor:(UIColor * _Nonnull)color;
+- (void)lz_setTitleColor:(UIColor * _Nonnull)color;
 
 /**
  *  设置Button的title的常规颜色和高亮颜色
@@ -151,8 +151,8 @@
  *  @param color            Button的常规color
  *  @param highlightedColor Button的高亮color
  */
-- (void)setTitleColor:(UIColor * _Nonnull)color
-     highlightedColor:(UIColor * _Nullable)highlightedColor;
+- (void)lz_setTitleColor:(UIColor * _Nonnull)color
+        highlightedColor:(UIColor * _Nullable)highlightedColor;
 
 
 

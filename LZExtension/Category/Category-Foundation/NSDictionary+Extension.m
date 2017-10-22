@@ -10,7 +10,7 @@
 
 @implementation NSDictionary (Extension)
 
-- (id _Nonnull)getValue:(NSString *_Nonnull)key as:(Class _Nonnull)type {
+- (id _Nonnull)lz_getValue:(NSString *_Nonnull)key as:(Class _Nonnull)type {
     id value = [self objectForKey:key];
     
     // 类型一样，直接返回
@@ -74,8 +74,10 @@
     return nil;
 }
 
-- (id _Nonnull)getValue:(NSString *_Nonnull)key as:(Class _Nonnull)type defaultValue:(id _Nonnull)defaultValue {
-    id result = [self getValue:key as:type];
+- (id _Nonnull)lz_getValue:(NSString *_Nonnull)key
+                        as:(Class _Nonnull)type
+              defaultValue:(id _Nonnull)defaultValue {
+    id result = [self lz_getValue:key as:type];
     if (!result) {
         result = defaultValue;
     }
@@ -83,7 +85,7 @@
     return result;
 }
 
-- (NSString *_Nonnull)descriptionWithLocale:(id _Nonnull)locale {
+- (NSString *_Nonnull)lz_descriptionWithLocale:(id _Nonnull)locale {
     NSMutableString *strM = [NSMutableString stringWithString:@"{\n"];
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -95,11 +97,11 @@
     return strM;
 }
 
-- (NSString * _Nonnull)dictionaryToJSON {
-    return [NSDictionary dictionaryToJSON:self];
+- (NSString * _Nonnull)lz_dictionaryToJSON {
+    return [NSDictionary lz_dictionaryToJSON:self];
 }
 
-+ (NSString * _Nonnull)dictionaryToJSON:(NSDictionary * _Nonnull)dictionary {
++ (NSString * _Nonnull)lz_dictionaryToJSON:(NSDictionary * _Nonnull)dictionary {
     NSString *json = nil;
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
@@ -114,7 +116,7 @@
     }
 }
 
-- (id _Nullable)safeObjectForKey:(NSString * _Nonnull )key {
+- (id _Nullable)lz_safeObjectForKey:(NSString * _Nonnull )key {
     NSArray *keysArray = [self allKeys];
     if ([keysArray containsObject:key]) {
         return [self objectForKey:key];

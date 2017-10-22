@@ -21,7 +21,7 @@
  *
  *  @return YES操作成功，NO失败
  */
-- (BOOL)safeSetObject:(id _Nonnull)anObject
-               forKey:(id<NSCopying> _Nonnull)aKey;
+- (BOOL)lz_safeSetObject:(id _Nonnull)anObject
+                  forKey:(id<NSCopying> _Nonnull)aKey;
 
 @end

@@ -18,7 +18,7 @@
  *
  *  @return 返回UIImage格式的屏幕截图
  */
-- (UIImage * _Nonnull)takeScreenshot;
+- (UIImage * _Nonnull)lz_takeScreenshot;
 
 /**
  *  获取当前window的屏幕截图，并选择是否保存至照片专辑中
@@ -27,7 +27,7 @@
  *
  *  @return 返回UIImage格式的屏幕截图
  */
-- (UIImage * _Nonnull)takeScreenshotAndSave:(BOOL)save;
+- (UIImage * _Nonnull)lz_takeScreenshotAndSave:(BOOL)save;
 
 /**
  *  获取当前window的屏幕截图，并选择是否保存至照片专辑中且延时多久保存
@@ -36,6 +36,6 @@
  *  @param save       YES保存，NO不保存
  *  @param completion 完成保存后的回调
  */
-- (void)takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^ _Nullable)(UIImage * _Nonnull screenshot))completion;
+- (void)lz_takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^ _Nullable)(UIImage * _Nonnull screenshot))completion;
 
 @end

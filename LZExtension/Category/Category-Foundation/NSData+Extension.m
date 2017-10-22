@@ -11,24 +11,24 @@
 @implementation NSData (Extension)
 
 
-+ (NSString * _Nonnull)convertToUTF8String:(NSData * _Nonnull)data {
++ (NSString * _Nonnull)lz_convertToUTF8String:(NSData * _Nonnull)data {
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
-- (NSString * _Nonnull)convertToUTF8String {
-    return [NSData convertToUTF8String:self];
+- (NSString * _Nonnull)lz_convertToUTF8String {
+    return [NSData lz_convertToUTF8String:self];
 }
 
-+ (NSString * _Nonnull)convertToASCIIString:(NSData * _Nonnull)data {
++ (NSString * _Nonnull)lz_convertToASCIIString:(NSData * _Nonnull)data {
     return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 }
 
-- (NSString * _Nonnull)convertToASCIIString {
-    return [NSData convertToASCIIString:self];
+- (NSString * _Nonnull)lz_convertToASCIIString {
+    return [NSData lz_convertToASCIIString:self];
 }
 
 
-- (NSString * _Nullable)convertUUIDToString {
+- (NSString * _Nullable)lz_convertUUIDToString {
     return [[[self description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 

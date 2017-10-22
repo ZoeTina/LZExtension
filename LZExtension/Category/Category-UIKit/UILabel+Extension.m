@@ -11,11 +11,11 @@
 
 @implementation UILabel (Extension)
 
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize {
-    return [self labelWithTitle:title color:color fontSize:fontSize alignment:NSTextAlignmentCenter];
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize {
+    return [self lz_labelWithTitle:title color:color fontSize:fontSize alignment:NSTextAlignmentCenter];
 }
 
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize alignment:(NSTextAlignment)alignment {
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize alignment:(NSTextAlignment)alignment {
     
     UILabel *label = [[UILabel alloc] init];
     
@@ -29,11 +29,11 @@
     return label;
 }
 
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font {
-    return [self labelWithTitle:title color:color font:font alignment:NSTextAlignmentCenter];
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font {
+    return [self lz_labelWithTitle:title color:color font:font alignment:NSTextAlignmentCenter];
 }
 
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font alignment:(NSTextAlignment)alignment {
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font alignment:(NSTextAlignment)alignment {
     
     UILabel *label = [[UILabel alloc] init];
     label.text = title;
@@ -47,21 +47,21 @@
 
 
 #pragma mark  /////  新增
--(CGSize)messageBodyLabelwith:(float)labelwith andLabelheight:(float)labelheieht
+-(CGSize)lz_messageBodyLabelwith:(float)labelwith andLabelheight:(float)labelheieht
 {
     CGSize size = [self.text boundingRectWithSize:CGSizeMake(labelwith, labelheieht) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:self.font} context:nil].size;
     
     return size;
 }
 
-+(CGSize)messageBodyText:(NSString *)text andSyFontofSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht
++(CGSize)lz_messageBodyText:(NSString *)text andSyFontofSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht
 {
     CGSize size = [text boundingRectWithSize:CGSizeMake(labelwith, labelheieht) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontsize]} context:nil].size;
     
     return size;
 }
 
-+ (NSArray *)getSeparatedLinesFromText:(NSString*)labelText  font:(UIFont*)labelFont  frame:(CGRect)labelFrame
++ (NSArray *)lz_getSeparatedLinesFromText:(NSString*)labelText  font:(UIFont*)labelFont  frame:(CGRect)labelFrame
 {
     NSString *text = labelText;
     UIFont   *font = labelFont;
@@ -94,14 +94,14 @@
 }
 
 
-+(CGSize)messageBodyText:(NSString *)text andBoldSystemFontOfSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht
++(CGSize)lz_messageBodyText:(NSString *)text andBoldSystemFontOfSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht
 {
     CGSize size = [text boundingRectWithSize:CGSizeMake(labelwith, labelheieht) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:fontsize]} context:nil].size;
     
     return size;
 }
 
-+ (NSAttributedString *)getLabelParagraph:(NSString*)text  height:(CGFloat)height{
++ (NSAttributedString *)lz_getLabelParagraph:(NSString*)text  height:(CGFloat)height{
     if (text == nil ||  text.length == 0) return nil;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:text];;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
@@ -110,7 +110,7 @@
     return attributedString;
 }
 
-- (CGFloat)calculatedHeight {
+- (CGFloat)lz_calculatedHeight {
     CGSize size = CGSizeZero;
     if (self.text.length > 0) {
         CGRect frame = [self.text boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: self.font } context:nil];
@@ -120,7 +120,7 @@
     return size.height;
 }
 
-- (void)setFont:(UIFont * _Nonnull)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
+- (void)lz_setFont:(UIFont * _Nonnull)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.text];
     [attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(fromIndex, toIndex - fromIndex)];
     

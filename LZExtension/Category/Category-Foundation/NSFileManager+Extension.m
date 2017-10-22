@@ -10,46 +10,46 @@
 
 @implementation NSFileManager (Extension)
 
-+ (NSString * _Nullable)readTextFile:(NSString * _Nonnull)file ofType:(NSString * _Nonnull)type {
++ (NSString * _Nullable)lz_readTextFile:(NSString * _Nonnull)file ofType:(NSString * _Nonnull)type {
     return [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:file ofType:type] encoding:NSUTF8StringEncoding error:nil];
 }
 
-+ (BOOL)saveArrayToPath:(DirectoryType)path withFilename:(NSString * _Nonnull)fileName array:(NSArray * _Nonnull)array {
++ (BOOL)lz_saveArrayToPath:(LZDirectoryType)path withFilename:(NSString * _Nonnull)fileName array:(NSArray * _Nonnull)array {
     NSString *_path;
     
     switch (path) {
-        case DirectoryTypeMainBundle:
-            _path = [self getBundlePathForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeMainBundle:
+            _path = [self lz_getBundlePathForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
-        case DirectoryTypeLibrary:
-            _path = [self getLibraryDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeLibrary:
+            _path = [self lz_getLibraryDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
-        case DirectoryTypeDocuments:
-            _path = [self getDocumentsDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeDocuments:
+            _path = [self lz_getDocumentsDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
-        case DirectoryTypeCache:
-            _path = [self getCacheDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeCache:
+            _path = [self lz_getCacheDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
     }
     
     return [NSKeyedArchiver archiveRootObject:array toFile:_path];
 }
 
-+ (NSArray * _Nullable)loadArrayFromPath:(DirectoryType)path withFilename:(NSString * _Nonnull)fileName {
++ (NSArray * _Nullable)lz_loadArrayFromPath:(LZDirectoryType)path withFilename:(NSString * _Nonnull)fileName {
     NSString *_path;
     
     switch (path) {
-        case DirectoryTypeMainBundle:
-            _path = [self getBundlePathForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeMainBundle:
+            _path = [self lz_getBundlePathForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
-        case DirectoryTypeLibrary:
-            _path = [self getLibraryDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeLibrary:
+            _path = [self lz_getLibraryDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
-        case DirectoryTypeDocuments:
-            _path = [self getDocumentsDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeDocuments:
+            _path = [self lz_getDocumentsDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
-        case DirectoryTypeCache:
-            _path = [self getCacheDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
+        case LZDirectoryTypeCache:
+            _path = [self lz_getCacheDirectoryForFile:[NSString stringWithFormat:@"%@.plist", fileName]];
             break;
     }
     
@@ -57,42 +57,42 @@
 }
 
 
-+ (NSString * _Nonnull)getBundlePathForFile:(NSString * _Nonnull)fileName {
++ (NSString * _Nonnull)lz_getBundlePathForFile:(NSString * _Nonnull)fileName {
     NSString *fileExtension = [fileName pathExtension];
     return [[NSBundle mainBundle] pathForResource:[fileName stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@", fileExtension] withString:@""] ofType:fileExtension];
 }
 
-+ (NSString * _Nonnull)getDocumentsDirectoryForFile:(NSString * _Nonnull)fileName {
++ (NSString * _Nonnull)lz_getDocumentsDirectoryForFile:(NSString * _Nonnull)fileName {
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/", fileName]];
 }
 
-+ (NSString * _Nonnull)getLibraryDirectoryForFile:(NSString * _Nonnull)fileName {
++ (NSString * _Nonnull)lz_getLibraryDirectoryForFile:(NSString * _Nonnull)fileName {
     NSString *libraryDirectory = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [libraryDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/", fileName]];
 }
 
-+ (NSString * _Nonnull)getCacheDirectoryForFile:(NSString * _Nonnull)fileName {
++ (NSString * _Nonnull)lz_getCacheDirectoryForFile:(NSString * _Nonnull)fileName {
     NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [cacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/", fileName]];
 }
 
-+ (NSNumber * _Nullable)fileSize:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)directory {
++ (NSNumber * _Nullable)lz_fileSize:(NSString * _Nonnull)fileName fromDirectory:(LZDirectoryType)directory {
     if (fileName.length > 0) {
         NSString *path;
         
         switch (directory) {
-            case DirectoryTypeMainBundle:
-                path = [self getBundlePathForFile:fileName];
+            case LZDirectoryTypeMainBundle:
+                path = [self lz_getBundlePathForFile:fileName];
                 break;
-            case DirectoryTypeLibrary:
-                path = [self getLibraryDirectoryForFile:fileName];
+            case LZDirectoryTypeLibrary:
+                path = [self lz_getLibraryDirectoryForFile:fileName];
                 break;
-            case DirectoryTypeDocuments:
-                path = [self getDocumentsDirectoryForFile:fileName];
+            case LZDirectoryTypeDocuments:
+                path = [self lz_getDocumentsDirectoryForFile:fileName];
                 break;
-            case DirectoryTypeCache:
-                path = [self getCacheDirectoryForFile:fileName];
+            case LZDirectoryTypeCache:
+                path = [self lz_getCacheDirectoryForFile:fileName];
                 break;
         }
         
@@ -107,22 +107,22 @@
     return nil;
 }
 
-+ (BOOL)deleteFile:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)directory {
++ (BOOL)lz_deleteFile:(NSString * _Nonnull)fileName fromDirectory:(LZDirectoryType)directory {
     if (fileName.length > 0) {
         NSString *path;
         
         switch (directory) {
-            case DirectoryTypeMainBundle:
-                path = [self getBundlePathForFile:fileName];
+            case LZDirectoryTypeMainBundle:
+                path = [self lz_getBundlePathForFile:fileName];
                 break;
-            case DirectoryTypeLibrary:
-                path = [self getLibraryDirectoryForFile:fileName];
+            case LZDirectoryTypeLibrary:
+                path = [self lz_getLibraryDirectoryForFile:fileName];
                 break;
-            case DirectoryTypeDocuments:
-                path = [self getDocumentsDirectoryForFile:fileName];
+            case LZDirectoryTypeDocuments:
+                path = [self lz_getDocumentsDirectoryForFile:fileName];
                 break;
-            case DirectoryTypeCache:
-                path = [self getCacheDirectoryForFile:fileName];
+            case LZDirectoryTypeCache:
+                path = [self lz_getCacheDirectoryForFile:fileName];
                 break;
         }
         
@@ -134,25 +134,25 @@
     return NO;
 }
 
-+ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)origin toDirectory:(DirectoryType)destination {
-    return [self moveLocalFile:fileName fromDirectory:origin toDirectory:destination withFolderName:nil];
++ (BOOL)lz_moveLocalFile:(NSString * _Nonnull)fileName fromDirectory:(LZDirectoryType)origin toDirectory:(LZDirectoryType)destination {
+    return [self lz_moveLocalFile:fileName fromDirectory:origin toDirectory:destination withFolderName:nil];
 }
 
-+ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)origin toDirectory:(DirectoryType)destination withFolderName:(NSString * _Nullable)folderName {
++ (BOOL)lz_moveLocalFile:(NSString * _Nonnull)fileName fromDirectory:(LZDirectoryType)origin toDirectory:(LZDirectoryType)destination withFolderName:(NSString * _Nullable)folderName {
     NSString *originPath;
     
     switch (origin) {
-        case DirectoryTypeMainBundle:
-            originPath = [self getBundlePathForFile:fileName];
+        case LZDirectoryTypeMainBundle:
+            originPath = [self lz_getBundlePathForFile:fileName];
             break;
-        case DirectoryTypeLibrary:
-            originPath = [self getDocumentsDirectoryForFile:fileName];
+        case LZDirectoryTypeLibrary:
+            originPath = [self lz_getDocumentsDirectoryForFile:fileName];
             break;
-        case DirectoryTypeDocuments:
-            originPath = [self getLibraryDirectoryForFile:fileName];
+        case LZDirectoryTypeDocuments:
+            originPath = [self lz_getLibraryDirectoryForFile:fileName];
             break;
-        case DirectoryTypeCache:
-            originPath = [self getCacheDirectoryForFile:fileName];
+        case LZDirectoryTypeCache:
+            originPath = [self lz_getCacheDirectoryForFile:fileName];
             break;
     }
     
@@ -164,17 +164,17 @@
     }
     
     switch (destination) {
-        case DirectoryTypeMainBundle:
-            destinationPath = [self getBundlePathForFile:destinationPath];
+        case LZDirectoryTypeMainBundle:
+            destinationPath = [self lz_getBundlePathForFile:destinationPath];
             break;
-        case DirectoryTypeLibrary:
-            destinationPath = [self getLibraryDirectoryForFile:destinationPath];
+        case LZDirectoryTypeLibrary:
+            destinationPath = [self lz_getLibraryDirectoryForFile:destinationPath];
             break;
-        case DirectoryTypeDocuments:
-            destinationPath = [self getDocumentsDirectoryForFile:destinationPath];
+        case LZDirectoryTypeDocuments:
+            destinationPath = [self lz_getDocumentsDirectoryForFile:destinationPath];
             break;
-        case DirectoryTypeCache:
-            destinationPath = [self getCacheDirectoryForFile:destinationPath];
+        case LZDirectoryTypeCache:
+            destinationPath = [self lz_getCacheDirectoryForFile:destinationPath];
             break;
     }
     
@@ -193,7 +193,7 @@
         }
     }
     
-    if (destination != DirectoryTypeMainBundle) {
+    if (destination != LZDirectoryTypeMainBundle) {
         if ([[NSFileManager defaultManager] fileExistsAtPath:originPath])
             if ([[NSFileManager defaultManager] removeItemAtPath:originPath error:nil]) {
                 deleted = YES;
@@ -207,28 +207,28 @@
 }
 
 
-+ (BOOL)duplicateFileAtPath:(NSString * _Nonnull)origin toNewPath:(NSString * _Nonnull)destination {
++ (BOOL)lz_duplicateFileAtPath:(NSString * _Nonnull)origin toNewPath:(NSString * _Nonnull)destination {
     if ([[NSFileManager defaultManager] fileExistsAtPath:origin]) {
         return [[NSFileManager defaultManager] copyItemAtPath:origin toPath:destination error:nil];
     }
     return NO;
 }
 
-+ (BOOL)renameFileFromDirectory:(DirectoryType)origin atPath:(NSString * _Nonnull)path withOldName:(NSString * _Nonnull)oldName andNewName:(NSString * _Nonnull)newName {
++ (BOOL)lz_renameFileFromDirectory:(LZDirectoryType)origin atPath:(NSString * _Nonnull)path withOldName:(NSString * _Nonnull)oldName andNewName:(NSString * _Nonnull)newName {
     NSString *originPath;
     
     switch (origin) {
-        case DirectoryTypeMainBundle:
-            originPath = [self getBundlePathForFile:path];
+        case LZDirectoryTypeMainBundle:
+            originPath = [self lz_getBundlePathForFile:path];
             break;
-        case DirectoryTypeLibrary:
-            originPath = [self getDocumentsDirectoryForFile:path];
+        case LZDirectoryTypeLibrary:
+            originPath = [self lz_getDocumentsDirectoryForFile:path];
             break;
-        case DirectoryTypeDocuments:
-            originPath = [self getLibraryDirectoryForFile:path];
+        case LZDirectoryTypeDocuments:
+            originPath = [self lz_getLibraryDirectoryForFile:path];
             break;
-        case DirectoryTypeCache:
-            originPath = [self getCacheDirectoryForFile:path];
+        case LZDirectoryTypeCache:
+            originPath = [self lz_getCacheDirectoryForFile:path];
             break;
     }
     
@@ -243,8 +243,8 @@
     return NO;
 }
 
-+ (id _Nullable)getSettings:(NSString * _Nonnull)settings objectForKey:(NSString * _Nonnull)objKey {
-    NSString *path = [self getLibraryDirectoryForFile:@""];
++ (id _Nullable)lz_getSettings:(NSString * _Nonnull)settings objectForKey:(NSString * _Nonnull)objKey {
+    NSString *path = [self lz_getLibraryDirectoryForFile:@""];
     path = [path stringByAppendingString:@"/Preferences/"];
     path = [path stringByAppendingString:[NSString stringWithFormat:@"%@-Settings.plist", settings]];
     
@@ -258,8 +258,8 @@
     return loadedPlist[objKey];
 }
 
-+ (BOOL)setSettings:(NSString * _Nonnull)settings object:(id _Nonnull)value forKey:(NSString * _Nonnull)objKey {
-    NSString *path = [self getLibraryDirectoryForFile:@""];
++ (BOOL)lz_setSettings:(NSString * _Nonnull)settings object:(id _Nonnull)value forKey:(NSString * _Nonnull)objKey {
+    NSString *path = [self lz_getLibraryDirectoryForFile:@""];
     path = [path stringByAppendingString:@"/Preferences/"];
     path = [path stringByAppendingString:[NSString stringWithFormat:@"%@-Settings.plist", settings]];
     
@@ -275,16 +275,16 @@
     return [loadedPlist writeToFile:path atomically:YES];
 }
 
-+ (id _Nullable)getAppSettingsForObjectWithKey:(NSString * _Nonnull)objKey {
++ (id _Nullable)lz_getAppSettingsForObjectWithKey:(NSString * _Nonnull)objKey {
     
     NSString *APP_NAME =  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
-    return [self getSettings:APP_NAME objectForKey:objKey];
+    return [self lz_getSettings:APP_NAME objectForKey:objKey];
 }
 
-+ (BOOL)setAppSettingsForObject:(id _Nonnull)value forKey:(NSString * _Nonnull)objKey {
++ (BOOL)lz_setAppSettingsForObject:(id _Nonnull)value forKey:(NSString * _Nonnull)objKey {
     
     NSString *APP_NAME =  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
-    return [self setSettings:APP_NAME object:value forKey:objKey];
+    return [self lz_setSettings:APP_NAME object:value forKey:objKey];
 }
 
 @end

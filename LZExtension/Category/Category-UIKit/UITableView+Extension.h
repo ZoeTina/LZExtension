@@ -25,12 +25,12 @@
  *
  *  @return 返回创建的UITableView实例
  */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                                 style:(UITableViewStyle)style
-                    cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle
-                        separatorInset:(UIEdgeInsets)separatorInset
-                            dataSource:(id <UITableViewDataSource> _Nullable)dataSource
-                              delegate:(id <UITableViewDelegate> _Nullable)delegate;
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame
+                                    style:(UITableViewStyle)style
+                       cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle
+                           separatorInset:(UIEdgeInsets)separatorInset
+                               dataSource:(id <UITableViewDataSource> _Nullable)dataSource
+                                 delegate:(id <UITableViewDelegate> _Nullable)delegate;
 
 /**
  *  获取指定组的所有索引路径
@@ -39,7 +39,7 @@
  *
  *  @return 返回一个包含所以索引路径的数组
  */
-- (NSArray * _Nonnull)getIndexPathsForSection:(NSUInteger)section;
+- (NSArray * _Nonnull)lz_getIndexPathsForSection:(NSUInteger)section;
 
 /**
  *  在指定组中获取指定行的下一个索引路径
@@ -49,8 +49,8 @@
  *
  *  @return 返回下一个索引路径
  */
-- (NSIndexPath * _Nonnull)getNextIndexPath:(NSUInteger)row
-                                forSection:(NSUInteger)section;
+- (NSIndexPath * _Nonnull)lz_getNextIndexPath:(NSUInteger)row
+                                   forSection:(NSUInteger)section;
 
 
 /**
@@ -61,8 +61,8 @@
  *
  *  @return 返回上一个索引路径
  */
-- (NSIndexPath * _Nonnull)getPreviousIndexPath:(NSUInteger)row
-                                    forSection:(NSUInteger)section;
+- (NSIndexPath * _Nonnull)lz_getPreviousIndexPath:(NSUInteger)row
+                                       forSection:(NSUInteger)section;
 
 
 @end

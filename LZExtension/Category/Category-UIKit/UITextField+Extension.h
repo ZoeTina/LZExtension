@@ -20,14 +20,14 @@
  *
  * @return UITextField
  */
-+ (instancetype)textFieldWithPlaceHolder:(NSString *)placeHolder;
++ (instancetype)lz_textFieldWithPlaceHolder:(NSString *)placeHolder;
 
 /**
  *  设置UITextField左边距
  *
  *  @param leftWidth 边距
  */
-- (void)setTextFieldLeftPadding:(CGFloat)leftWidth;
+- (void)lz_setTextFieldLeftPadding:(CGFloat)leftWidth;
 
 
 /**
@@ -36,7 +36,7 @@
  @param normalButtonName      常规图片名
  @param highlightedButtonName 高亮图片名
  */
-- (void)setTextFieldClearButtonNormal:(NSString *)normalButtonName Highlighted:(NSString *)highlightedButtonName;
+- (void)lz_setTextFieldClearButtonNormal:(NSString *)normalButtonName Highlighted:(NSString *)highlightedButtonName;
 
 
 /**
@@ -44,7 +44,7 @@
  *
  *  @param color 颜色值
  */
-- (void)setTextFieldPlaceholderColor:(UIColor *)color;
+- (void)lz_setTextFieldPlaceholderColor:(UIColor *)color;
 
 /**
  *  设置全局共用UITextField对象的指定格式
@@ -52,5 +52,5 @@
  *  注意：此是对setTextFieldClearButtonNormal:Highlighted:方法的再封装，需要到.m文件中去自己设置图片
  *
  */
-+ (void)setTextFieldSpecifiedformat;
++ (void)lz_setTextFieldSpecifiedformat;
 @end

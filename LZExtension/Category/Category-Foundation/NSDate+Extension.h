@@ -22,30 +22,35 @@
 
 
 /** 将字符串转成NSDate */
-+(NSDate* _Nullable)lz_dateStringToDate:(nonnull NSString*)timeString formatter:(nonnull NSString*)formatter;
++(NSDate* _Nullable)lz_dateStringToDate:(nonnull NSString*)timeString
+                              formatter:(nonnull NSString*)formatter;
 /** 将NSDate转成时间戳 */
-+(double)lz_dateToTimeStamp:(NSDate* _Nullable) formatTime format:(NSString* _Nullable)format;
++(double)lz_dateToTimeStamp:(NSDate* _Nullable) formatTime
+                     format:(NSString* _Nullable)format;
 /** 将时间戳转成NSDate */
-+(NSDate* _Nullable)lz_timeStampToData:(double) timestamp format:(NSString* _Nullable)format;
++(NSDate* _Nullable)lz_timeStampToData:(double) timestamp
+                                format:(NSString* _Nullable)format;
 /** 将NSDate转成标准字符串 */
-+(nonnull NSString*)lz_dateToStringTime:(NSDate* _Nullable) formatTime format:(NSString* _Nullable)format;
++(nonnull NSString*)lz_dateToStringTime:(NSDate* _Nullable) formatTime
+                                 format:(NSString* _Nullable)format;
 /** 将字符串时间转成周末制 */
-+(nonnull NSString*)lz_stringTimeToString:(NSString* _Nullable) formatTime format:(NSString* _Nullable)format;
++(nonnull NSString*)lz_stringTimeToString:(NSString* _Nullable) formatTime
+                                   format:(NSString* _Nullable)format;
 
 /** 比较from和self的时间差值 */
 - (NSDateComponents *_Nonnull)lz_deltaFrom:(NSDate *_Nullable)from;
 
 /** 是否为今年 */
-- (BOOL)isThisYear;
+- (BOOL)lz_isThisYear;
 
 /** 是否为昨天 */
-- (BOOL)isYesterday;
+- (BOOL)lz_isYesterday;
 
 /** 是否为今天 */
-- (BOOL)isThisDay;
+- (BOOL)lz_isThisDay;
 
 /** 是否为明天 */
-- (BOOL)isTomorrowDay;
+- (BOOL)lz_isTomorrowDay;
 
 /** 获得与当前时间的差距 */
 - (NSDateComponents * _Nonnull)lz_deltaWithNow;

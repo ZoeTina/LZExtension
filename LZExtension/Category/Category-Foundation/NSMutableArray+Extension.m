@@ -10,9 +10,9 @@
 
 @implementation NSMutableArray (Extension)
 
-- (void)moveObjectFromIndex:(NSUInteger)from toIndex:(NSUInteger)to {
+- (void)lz_moveObjectFromIndex:(NSUInteger)from toIndex:(NSUInteger)to {
     if (to != from) {
-        id obj = [self safeObjectAtIndex:from];
+        id obj = [self lz_safeObjectAtIndex:from];
         [self removeObjectAtIndex:from];
         
         if (to >= [self count]) {
@@ -24,7 +24,7 @@
 }
 
 
-- (id _Nullable)safeObjectAtIndex:(NSUInteger)index {
+- (id _Nullable)lz_safeObjectAtIndex:(NSUInteger)index {
     if ([self count] > 0 && [self count] > index) {
         return [self objectAtIndex:index];
     } else {
@@ -33,11 +33,11 @@
 }
 
 
-- (NSMutableArray * _Nonnull)reversedArray {
-    return (NSMutableArray *)[[self class] reversedArray:self];
+- (NSMutableArray * _Nonnull)lz_reversedArray {
+    return (NSMutableArray *)[[self class] lz_reversedArray:self];
 }
 
-+ (NSArray * _Nonnull)reversedArray:(NSArray * _Nonnull)array {
++ (NSArray * _Nonnull)lz_reversedArray:(NSArray * _Nonnull)array {
     NSMutableArray *arrayTemp = [NSMutableArray arrayWithCapacity:[array count]];
     NSEnumerator *enumerator = [array reverseObjectEnumerator];
     
@@ -46,7 +46,7 @@
     return arrayTemp;
 }
 
-+ (NSMutableArray * _Nonnull)sortArrayByKey:(NSString * _Nonnull)key array:(NSMutableArray * _Nonnull)array ascending:(BOOL)ascending {
++ (NSMutableArray * _Nonnull)lz_sortArrayByKey:(NSString * _Nonnull)key array:(NSMutableArray * _Nonnull)array ascending:(BOOL)ascending {
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     [tempArray removeAllObjects];
     [tempArray addObjectsFromArray:array];
@@ -62,12 +62,5 @@
     
     return array;
 }
-
-
-
-
-
-
-
 
 @end

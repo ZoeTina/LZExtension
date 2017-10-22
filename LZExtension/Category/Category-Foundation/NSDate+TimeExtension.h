@@ -21,8 +21,8 @@
  *
  *  @return return value description
  */
-+ (NSDate *)dateFromString:(NSString *)timeStr
-                    format:(NSString *)format;
++ (NSDate *)lz_dateFromString:(NSString *)timeStr
+                       format:(NSString *)format;
 
 /**
  *  NSDate转时间戳
@@ -31,7 +31,7 @@
  *
  *  @return 返回时间戳
  */
-+ (NSInteger)timestampFromDate:(NSDate *)date;
++ (NSInteger)lz_timestampFromDate:(NSDate *)date;
 
 /**
  *  字符串转时间戳
@@ -41,8 +41,8 @@
  *
  *  @return 返回时间戳的字符串
  */
-+(NSInteger)timestampFromString:(NSString *)timeStr
-                          format:(NSString *)format;
++(NSInteger)lz_timestampFromString:(NSString *)timeStr
+                            format:(NSString *)format;
 
 
 /**
@@ -53,8 +53,8 @@
  *
  *  @return 返回字符串格式时间
  */
-+ (NSString *)dateStrFromCstampTime:(NSInteger)timeStamp
-                     withDateFormat:(NSString *)format;
++ (NSString *)lz_dateStrFromCstampTime:(NSInteger)timeStamp
+                        withDateFormat:(NSString *)format;
 
 /**
  *  NSDate转字符串
@@ -64,6 +64,6 @@
  *
  *  @return 返回字符串格式时间
  */
-+ (NSString *)datestrFromDate:(NSDate *)date
-               withDateFormat:(NSString *)format;
++ (NSString *)lz_datestrFromDate:(NSDate *)date
+                  withDateFormat:(NSString *)format;
 @end

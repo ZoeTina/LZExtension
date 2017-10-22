@@ -19,15 +19,15 @@
  *  @param from 原索引位置
  *  @param to   指定索引位置
  */
-- (void)moveObjectFromIndex:(NSUInteger)from
-                    toIndex:(NSUInteger)to;
+- (void)lz_moveObjectFromIndex:(NSUInteger)from
+                       toIndex:(NSUInteger)to;
 
 /**
  *  根据自身创建一个倒序的数组
  *
  *  @return 返回倒序数组
  */
-- (NSMutableArray * _Nonnull)reversedArray;
+- (NSMutableArray * _Nonnull)lz_reversedArray;
 
 /**
  *  根据指定的key对数组进行升序或降序排序
@@ -38,8 +38,8 @@
  *
  *  @return 返回被处理后的数组
  */
-+ (NSMutableArray * _Nonnull)sortArrayByKey:(NSString * _Nonnull)key
-                                      array:(NSMutableArray * _Nonnull)array
-                                  ascending:(BOOL)ascending;
++ (NSMutableArray * _Nonnull)lz_sortArrayByKey:(NSString * _Nonnull)key
+                                         array:(NSMutableArray * _Nonnull)array
+                                     ascending:(BOOL)ascending;
 
 @end

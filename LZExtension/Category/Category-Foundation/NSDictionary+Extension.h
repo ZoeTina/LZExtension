@@ -13,17 +13,20 @@
  */
 @interface NSDictionary (Extension)
 
-- (id _Nonnull)getValue:(NSString *_Nonnull)key as:(Class _Nonnull)type;
+- (id _Nonnull)lz_getValue:(NSString *_Nonnull)key
+                        as:(Class _Nonnull)type;
 
-- (id _Nonnull)getValue:(NSString *_Nonnull)key as:(Class _Nonnull)type defaultValue:(id _Nonnull)defaultValue;
-- (NSString *_Nonnull)descriptionWithLocale:(id _Nonnull)locale;
+- (id _Nonnull)lz_getValue:(NSString *_Nonnull)key
+                        as:(Class _Nonnull)type
+              defaultValue:(id _Nonnull)defaultValue;
+- (NSString *_Nonnull)lz_descriptionWithLocale:(id _Nonnull)locale;
 
 /**
  *  以NSString类型将字典本身转换为JSON
  *
  *  @return 返回NSString类型的JSON或者当解析错误时返回nil
  */
-- (NSString * _Nonnull)dictionaryToJSON;
+- (NSString * _Nonnull)lz_dictionaryToJSON;
 
 /**
  *  将给出的字典转换为NSString类型的JSON
@@ -32,7 +35,7 @@
  *
  *  @return 返回NSString类型的JSON或者当解析错误时返回nil
  */
-+ (NSString * _Nonnull)dictionaryToJSON:(NSDictionary * _Nonnull)dictionary;
++ (NSString * _Nonnull)lz_dictionaryToJSON:(NSDictionary * _Nonnull)dictionary;
 
 /**
  *  如果key存在返回对应的对象，否则返回nil
@@ -41,5 +44,5 @@
  *
  *  @return Value值，否则nil
  */
-- (id _Nullable)safeObjectForKey:(NSString * _Nonnull)key;
+- (id _Nullable)lz_safeObjectForKey:(NSString * _Nonnull)key;
 @end

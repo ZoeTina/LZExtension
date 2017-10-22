@@ -11,7 +11,7 @@
 
 @implementation NSProcessInfo (Extension)
 
-+ (float)currentAppCPUUsage {
++ (float)lz_currentAppCPUUsage {
     kern_return_t kr;
     task_info_data_t tinfo;
     mach_msg_type_number_t task_info_count;

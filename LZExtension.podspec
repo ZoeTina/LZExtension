@@ -7,6 +7,8 @@ Pod::Spec.new do |s|
     s.homepage     = "https://github.com/ZoeTina/LZExtension"
     s.license            = { :type => "MIT", :file => "LICENSE" }
     s.author             = { "佐伊" => "136769890@qq.com" }
+    
+    s.platform     = :ios
     s.social_media_url   = "http://weibo.com/u/1625323685"
     s.source        = { :git => "https://github.com/ZoeTina/LZExtension.git", :tag => s.version }
     s.source_files  = "LZExtension/**/*.{h,m}"

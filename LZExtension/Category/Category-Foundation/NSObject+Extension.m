@@ -10,7 +10,7 @@
 
 @implementation NSObject (Extension)
 
-- (BOOL)isValid {
+- (BOOL)lz_isValid {
     return !(self == nil || [self isKindOfClass:[NSNull class]]);
 }
 

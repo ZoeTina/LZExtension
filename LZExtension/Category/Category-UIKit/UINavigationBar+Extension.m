@@ -10,11 +10,11 @@
 
 @implementation UINavigationBar (Extension)
 
-- (void)setTransparent:(BOOL)transparent {
-    [self setTransparent:transparent translucent:YES];
+- (void)lz_isRetinasetTransparent:(BOOL)transparent {
+    [self lz_isRetinasetTransparent:transparent translucent:YES];
 }
 
-- (void)setTransparent:(BOOL)transparent translucent:(BOOL)translucent {
+- (void)lz_isRetinasetTransparent:(BOOL)transparent translucent:(BOOL)translucent {
     if (transparent) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         self.shadowImage = [UIImage new];

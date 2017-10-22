@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-typedef void (^YYActionBlock)(void);
+typedef void (^LZActionBlock)(void);
 
 /**
  *  此分类增加了一些关于UIButton的有用方法
@@ -27,7 +27,7 @@ typedef void (^YYActionBlock)(void);
  *
  *  @return UIButton
  */
-+ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font imageName:(NSString *)imageName target:(id)target action:(SEL)action;
++ (instancetype)lz_buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font imageName:(NSString *)imageName target:(id)target action:(SEL)action;
 
 /**
  *  创建按钮有文字,有颜色,有字体,有图片,有背景
@@ -40,7 +40,7 @@ typedef void (^YYActionBlock)(void);
  *
  *  @return UIButton
  */
-+ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font imageName:(NSString *)imageName target:(id)target action:(SEL)action backImageName:(NSString *)backImageName;
++ (instancetype)lz_buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font imageName:(NSString *)imageName target:(id)target action:(SEL)action backImageName:(NSString *)backImageName;
 
 
 /**
@@ -52,7 +52,7 @@ typedef void (^YYActionBlock)(void);
  *
  *  @return UIButton
  */
-+ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font target:(id)target action:(SEL)action;
++ (instancetype)lz_buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font target:(id)target action:(SEL)action;
 
 /**
  *  创建按钮有文字,有颜色，有字体，没有图片，有背景
@@ -63,10 +63,10 @@ typedef void (^YYActionBlock)(void);
  *
  *  @return UIButton
  */
-+ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font target:(id)target action:(SEL)action backImageName:(NSString *)backImageName;
++ (instancetype)lz_buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font target:(id)target action:(SEL)action backImageName:(NSString *)backImageName;
 
 @property (readonly) NSMutableDictionary *event;
 
-- (void) handleControlEvent:(UIControlEvents)controlEvent withBlock:(YYActionBlock)action;
+- (void) lz_handleControlEvent:(UIControlEvents)controlEvent withBlock:(LZActionBlock)action;
 
 @end

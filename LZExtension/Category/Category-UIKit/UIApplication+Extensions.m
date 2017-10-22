@@ -11,15 +11,15 @@
 
 @implementation UIApplication (Extensions)
 
-+ (AppDelegate *)appDelegate {
++ (AppDelegate *)lz_appDelegate {
     return (AppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
-+ (UIViewController *)rootViewController {
-    return [UIApplication appDelegate].window.rootViewController;
++ (UIViewController *)lz_rootViewController {
+    return [UIApplication lz_appDelegate].window.rootViewController;
 }
 
-+ (UIImage *)launchImage {
++ (UIImage *)lz_launchImage {
     UIImage *image = nil;
     NSArray *launchImages = [NSBundle mainBundle].infoDictionary[@"UILaunchImages"];
     

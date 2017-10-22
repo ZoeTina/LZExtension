@@ -10,15 +10,15 @@
 
 @implementation NSNumber (Extension)
 
-+ (NSInteger)randomIntBetweenMin:(NSInteger)minValue andMax:(NSInteger)maxValue {
-    return (NSInteger)(minValue + [self randomFloat] * (maxValue - minValue));
++ (NSInteger)lz_randomIntBetweenMin:(NSInteger)minValue andMax:(NSInteger)maxValue {
+    return (NSInteger)(minValue + [self lz_randomFloat] * (maxValue - minValue));
 }
 
-+ (CGFloat)randomFloat {
++ (CGFloat)lz_randomFloat {
     return (float) arc4random() / UINT_MAX;
 }
 
-+ (CGFloat)randomFloatBetweenMin:(CGFloat)minValue andMax:(CGFloat)maxValue {
++ (CGFloat)lz_randomFloatBetweenMin:(CGFloat)minValue andMax:(CGFloat)maxValue {
     return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * (maxValue - minValue)) + minValue;
 }
 

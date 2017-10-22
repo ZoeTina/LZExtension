@@ -16,13 +16,13 @@
 /**
  *  移除当前UIWebView的背景阴影
  */
-- (void)removeBackgroundShadow;
+- (void)lz_removeBackgroundShadow;
 
 /**
  *  加载网址
  *
  *  @param website 需要加载的网址
  */
-- (void)loadWebsite:(NSString * _Nonnull)website;
+- (void)lz_loadWebsite:(NSString * _Nonnull)website;
 
 @end

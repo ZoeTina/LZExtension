@@ -22,7 +22,7 @@
  *
  *  @return UILabel(文本水平居中)
  */
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize;
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize;
 
 
 /**
@@ -34,7 +34,7 @@
  *
  *  @return UILabel(文本水平居中)
  */
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font;
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font;
 
 
 /**
@@ -47,7 +47,7 @@
  *
  *  @return UILabel
  */
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize alignment:(NSTextAlignment)alignment;
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize alignment:(NSTextAlignment)alignment;
 
 
 /**
@@ -60,7 +60,7 @@
  *
  *  @return UILabel
  */
-+ (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font alignment:(NSTextAlignment)alignment;
++ (instancetype)lz_labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font alignment:(NSTextAlignment)alignment;
 
 /**
  *  计算UILabel的文字的大小
@@ -71,7 +71,7 @@
  *  @return 返回文本的大小
  */
 
--(CGSize)messageBodyLabelwith:(float)labelwith andLabelheight:(float)labelheieht;
+-(CGSize)lz_messageBodyLabelwith:(float)labelwith andLabelheight:(float)labelheieht;
 
 /**
  *  计算UILabel的细体文字的大小
@@ -83,7 +83,7 @@
  *
  *  @return 返回文本的大小
  */
-+(CGSize)messageBodyText:(NSString *)text andSyFontofSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht;
++(CGSize)lz_messageBodyText:(NSString *)text andSyFontofSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht;
 
 /**
  *  计算UILabel的粗体文字的大小
@@ -95,10 +95,10 @@
  *
  *  @return 返回文本的大小
  */
-+(CGSize)messageBodyText:(NSString *)text andBoldSystemFontOfSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht;
++(CGSize)lz_messageBodyText:(NSString *)text andBoldSystemFontOfSize:(float)fontsize andLabelwith:(float)labelwith andLabelheight:(float)labelheieht;
 
 
-+ (NSArray *)getSeparatedLinesFromText:(NSString*)labelText  font:(UIFont*)labelFont  frame:(CGRect)labelFrame;
++ (NSArray *)lz_getSeparatedLinesFromText:(NSString*)labelText  font:(UIFont*)labelFont  frame:(CGRect)labelFrame;
 
 /**
  *  计算UILabel的行间距
@@ -108,14 +108,14 @@
  *
  *  @return 返回富文本
  */
-+ (NSAttributedString*)getLabelParagraph:(NSString*)text  height:(CGFloat)height;
++ (NSAttributedString*)lz_getLabelParagraph:(NSString*)text  height:(CGFloat)height;
 
 /**
  *  基于Label的text、width、font计算其height
  *
  *  @return 返回计算的高
  */
-- (CGFloat)calculatedHeight;
+- (CGFloat)lz_calculatedHeight;
 
 
 /**
@@ -125,8 +125,8 @@
  *  @param fromIndex 开始索引
  *  @param toIndex   结束索引
  */
-- (void)setFont:(UIFont *)font
-      fromIndex:(NSInteger)fromIndex
-        toIndex:(NSInteger)toIndex;
+- (void)lz_setFont:(UIFont *)font
+         fromIndex:(NSInteger)fromIndex
+           toIndex:(NSInteger)toIndex;
 @end
 

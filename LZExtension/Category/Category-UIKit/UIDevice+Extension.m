@@ -15,7 +15,7 @@
 
 @implementation UIDevice (Extension)
 
-+ (NSString * _Nonnull)devicePlatform {
++ (NSString * _Nonnull)lz_devicePlatform {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -25,8 +25,8 @@
     return platform;
 }
 
-+ (NSString * _Nonnull)devicePlatformString {
-    NSString *platform = [self devicePlatform];
++ (NSString * _Nonnull)lz_devicePlatformString {
+    NSString *platform = [self lz_devicePlatform];
     // iPhone
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
@@ -103,59 +103,59 @@
     return platform;
 }
 
-+ (BOOL)isiPad {
-    if ([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPad"]) {
++ (BOOL)lz_isiPad {
+    if ([[[self lz_devicePlatform] substringToIndex:4] isEqualToString:@"iPad"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isiPhone {
-    if ([[[self devicePlatform] substringToIndex:6] isEqualToString:@"iPhone"]) {
++ (BOOL)lz_isiPhone {
+    if ([[[self lz_devicePlatform] substringToIndex:6] isEqualToString:@"iPhone"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isiPod {
-    if ([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPod"]) {
++ (BOOL)lz_isiPod {
+    if ([[[self lz_devicePlatform] substringToIndex:4] isEqualToString:@"iPod"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isAppleTV {
-    if ([[[self devicePlatform] substringToIndex:7] isEqualToString:@"AppleTV"]) {
++ (BOOL)lz_isAppleTV {
+    if ([[[self lz_devicePlatform] substringToIndex:7] isEqualToString:@"AppleTV"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isAppleWatch {
-    if ([[[self devicePlatform] substringToIndex:5] isEqualToString:@"Watch"]) {
++ (BOOL)lz_isAppleWatch {
+    if ([[[self lz_devicePlatform] substringToIndex:5] isEqualToString:@"Watch"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isSimulator {
-    if ([[self devicePlatform] isEqualToString:@"i386"] || [[self devicePlatform] isEqualToString:@"x86_64"]) {
++ (BOOL)lz_isSimulator {
+    if ([[self lz_devicePlatform] isEqualToString:@"i386"] || [[self lz_devicePlatform] isEqualToString:@"x86_64"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (NSInteger)iOSVersion {
++ (NSInteger)lz_iOSVersion {
     return [[[UIDevice currentDevice] systemVersion] integerValue];
 }
 
-+ (NSUInteger)getSysInfo:(uint)typeSpecifier {
++ (NSUInteger)lz_getSysInfo:(uint)typeSpecifier {
     size_t size = sizeof(int);
     int results;
     int mib[2] = {CTL_HW, typeSpecifier};
@@ -163,36 +163,36 @@
     return (NSUInteger) results;
 }
 
-+ (NSUInteger)cpuFrequency {
-    return [self getSysInfo:HW_CPU_FREQ];
++ (NSUInteger)lz_cpuFrequency {
+    return [self lz_getSysInfo:HW_CPU_FREQ];
 }
 
-+ (NSUInteger)busFrequency {
-    return [self getSysInfo:HW_TB_FREQ];
++ (NSUInteger)lz_busFrequency {
+    return [self lz_getSysInfo:HW_TB_FREQ];
 }
 
-+ (NSUInteger)ramSize {
-    return [self getSysInfo:HW_MEMSIZE];
++ (NSUInteger)lz_ramSize {
+    return [self lz_getSysInfo:HW_MEMSIZE];
 }
 
-+ (NSUInteger)cpuNumber {
-    return [self getSysInfo:HW_NCPU];
++ (NSUInteger)lz_cpuNumber {
+    return [self lz_getSysInfo:HW_NCPU];
 }
 
-+ (NSUInteger)totalMemory {
-    return [self getSysInfo:HW_PHYSMEM];
++ (NSUInteger)lz_totalMemory {
+    return [self lz_getSysInfo:HW_PHYSMEM];
 }
 
-+ (NSUInteger)userMemory {
-    return [self getSysInfo:HW_USERMEM];
++ (NSUInteger)lz_userMemory {
+    return [self lz_getSysInfo:HW_USERMEM];
 }
 
-+ (NSNumber * _Nonnull)totalDiskSpace {
++ (NSNumber * _Nonnull)lz_totalDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemSize];
 }
 
-+ (NSNumber * _Nonnull)freeDiskSpace {
++ (NSNumber * _Nonnull)lz_freeDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
 }

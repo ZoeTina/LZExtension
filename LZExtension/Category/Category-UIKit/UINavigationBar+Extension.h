@@ -18,7 +18,7 @@
  *
  *  @param transparent YES透明，NO不透明
  */
-- (void)setTransparent:(BOOL)transparent;
+- (void)lz_isRetinasetTransparent:(BOOL)transparent;
 
 /**
  *  设置UINavigationBar是否透明、半透明
@@ -26,6 +26,6 @@
  *  @param transparent YES透明，NO不透明
  *  @param translucent 一个决定UINavigationBar是否半透明的Boolean值参数
  */
-- (void)setTransparent:(BOOL)transparent translucent:(BOOL)translucent;
+- (void)lz_isRetinasetTransparent:(BOOL)transparent translucent:(BOOL)translucent;
 
 @end

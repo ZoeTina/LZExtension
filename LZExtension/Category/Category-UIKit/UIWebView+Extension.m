@@ -10,7 +10,7 @@
 
 @implementation UIWebView (Extension)
 
-- (void)removeBackgroundShadow {
+- (void)lz_removeBackgroundShadow {
     for (UIView *eachSubview in [self.scrollView subviews]) {
         if ([eachSubview isKindOfClass:[UIImageView class]] && eachSubview.frame.origin.x <= 500) {
             eachSubview.hidden = YES;
@@ -19,7 +19,7 @@
     }
 }
 
-- (void)loadWebsite:(NSString * _Nonnull)website {
+- (void)lz_loadWebsite:(NSString * _Nonnull)website {
     [self loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:website]]];
 }
 

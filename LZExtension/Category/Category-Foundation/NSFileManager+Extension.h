@@ -11,15 +11,15 @@
 /**
  *  目录类型枚举
  */
-typedef NS_ENUM(NSInteger, DirectoryType) {
+typedef NS_ENUM(NSInteger, LZDirectoryType) {
     /** 主bundle目录 */
-    DirectoryTypeMainBundle = 0,
+    LZDirectoryTypeMainBundle = 0,
     /** Library目录 */
-    DirectoryTypeLibrary,
+    LZDirectoryTypeLibrary,
     /** Documents目录 */
-    DirectoryTypeDocuments,
+    LZDirectoryTypeDocuments,
     /** Cache目录 */
-    DirectoryTypeCache
+    LZDirectoryTypeCache
 };
 
 
@@ -36,8 +36,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回文件字符串内容
  */
-+ (NSString * _Nullable)readTextFile:(NSString * _Nonnull)file
-                              ofType:(NSString * _Nonnull)type;
++ (NSString * _Nullable)lz_readTextFile:(NSString * _Nonnull)file
+                                 ofType:(NSString * _Nonnull)type;
 
 /**
  *  将指定的数组保存到指定目录下的指定文件中
@@ -48,9 +48,9 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YSE操作成功，NO失败
  */
-+ (BOOL)saveArrayToPath:(DirectoryType)path
-           withFilename:(NSString * _Nonnull)fileName
-                  array:(NSArray * _Nonnull)array;
++ (BOOL)lz_saveArrayToPath:(LZDirectoryType)path
+              withFilename:(NSString * _Nonnull)fileName
+                     array:(NSArray * _Nonnull)array;
 
 /**
  *  从指定的目录下指定文件，返回数组
@@ -60,8 +60,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回加载出的数组
  */
-+ (NSArray * _Nullable)loadArrayFromPath:(DirectoryType)path
-                            withFilename:(NSString * _Nonnull)fileName;
++ (NSArray * _Nullable)lz_loadArrayFromPath:(LZDirectoryType)path
+                               withFilename:(NSString * _Nonnull)fileName;
 
 /**
  *  获取主Bundle目录下的指定文件地址
@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回字符串地址
  */
-+ (NSString * _Nonnull)getBundlePathForFile:(NSString * _Nonnull)fileName;
++ (NSString * _Nonnull)lz_getBundlePathForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  获取Documents目录下的指定文件地址
@@ -79,7 +79,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回字符串目录地址
  */
-+ (NSString * _Nonnull)getDocumentsDirectoryForFile:(NSString * _Nonnull)fileName;
++ (NSString * _Nonnull)lz_getDocumentsDirectoryForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  获取Library目录下的指定文件地址
@@ -88,7 +88,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回字符串目录地址
  */
-+ (NSString * _Nonnull)getLibraryDirectoryForFile:(NSString * _Nonnull)fileName;
++ (NSString * _Nonnull)lz_getLibraryDirectoryForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  获取Cache目录下的指定文件地址
@@ -97,7 +97,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回字符串目录地址
  */
-+ (NSString * _Nonnull)getCacheDirectoryForFile:(NSString * _Nonnull)fileName;
++ (NSString * _Nonnull)lz_getCacheDirectoryForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  返回指定目录下指定文件的的文件大小
@@ -107,8 +107,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回文件大小
  */
-+ (NSNumber * _Nullable)fileSize:(NSString * _Nonnull)fileName
-                   fromDirectory:(DirectoryType)directory;
++ (NSNumber * _Nullable)lz_fileSize:(NSString * _Nonnull)fileName
+                      fromDirectory:(LZDirectoryType)directory;
 
 /**
  *  删除指定目录下的指定文件
@@ -118,8 +118,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YES操作成功，NO失败
  */
-+ (BOOL)deleteFile:(NSString * _Nonnull)fileName
-     fromDirectory:(DirectoryType)directory;
++ (BOOL)lz_deleteFile:(NSString * _Nonnull)fileName
+        fromDirectory:(LZDirectoryType)directory;
 
 /**
  *  将文件从一个目录移动到另一个目录
@@ -130,9 +130,9 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YES操作成功，NO失败
  */
-+ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName
-        fromDirectory:(DirectoryType)origin
-          toDirectory:(DirectoryType)destination;
++ (BOOL)lz_moveLocalFile:(NSString * _Nonnull)fileName
+           fromDirectory:(LZDirectoryType)origin
+             toDirectory:(LZDirectoryType)destination;
 
 /**
  *  将文件从一个目录移动到另一个目录
@@ -144,10 +144,10 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YES操作成功，NO失败
  */
-+ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName
-        fromDirectory:(DirectoryType)origin
-          toDirectory:(DirectoryType)destination
-       withFolderName:(NSString * _Nullable)folderName;
++ (BOOL)lz_moveLocalFile:(NSString * _Nonnull)fileName
+           fromDirectory:(LZDirectoryType)origin
+             toDirectory:(LZDirectoryType)destination
+          withFolderName:(NSString * _Nullable)folderName;
 
 /**
  *  复制一个文件到另一个目录
@@ -157,8 +157,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YES操作成功，NO失败
  */
-+ (BOOL)duplicateFileAtPath:(NSString * _Nonnull)origin
-                  toNewPath:(NSString * _Nonnull)destination;
++ (BOOL)lz_duplicateFileAtPath:(NSString * _Nonnull)origin
+                     toNewPath:(NSString * _Nonnull)destination;
 
 /**
  *  对指定目录下的指定文件进行重命名
@@ -170,10 +170,10 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YES操作成功，NO失败
  */
-+ (BOOL)renameFileFromDirectory:(DirectoryType)origin
-                         atPath:(NSString * _Nonnull)path
-                    withOldName:(NSString * _Nonnull)oldName
-                     andNewName:(NSString * _Nonnull)newName;
++ (BOOL)lz_renameFileFromDirectory:(LZDirectoryType)origin
+                            atPath:(NSString * _Nonnull)path
+                       withOldName:(NSString * _Nonnull)oldName
+                        andNewName:(NSString * _Nonnull)newName;
 
 /**
  *  根据给出的key获取APP的偏好设置
@@ -182,7 +182,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 通过键值获取的APP偏好设置对象
  */
-+ (id _Nullable)getAppSettingsForObjectWithKey:(NSString * _Nonnull)objKey;
++ (id _Nullable)lz_getAppSettingsForObjectWithKey:(NSString * _Nonnull)objKey;
 
 /**
  *  设置APP偏好设置通过key和object值，偏好设置文件被保存在Library目录
@@ -192,8 +192,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YES操作成功，NO失败
  */
-+ (BOOL)setAppSettingsForObject:(id _Nonnull)value
-                         forKey:(NSString * _Nonnull)objKey;
++ (BOOL)lz_setAppSettingsForObject:(id _Nonnull)value
+                            forKey:(NSString * _Nonnull)objKey;
 
 /**
  *  通过指定的key获取设置文件中的值
@@ -203,8 +203,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return 返回key对应的对象值
  */
-+ (id _Nullable)getSettings:(NSString * _Nonnull)settings
-               objectForKey:(NSString * _Nonnull)objKey;
++ (id _Nullable)lz_getSettings:(NSString * _Nonnull)settings
+                  objectForKey:(NSString * _Nonnull)objKey;
 
 /**
  *  将指定的key和value添加到指定的设置文件中，设置文件将保存在Library目录中
@@ -215,9 +215,9 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return YES操作成功，NO失败
  */
-+ (BOOL)setSettings:(NSString * _Nonnull)settings
-             object:(id _Nonnull)value
-             forKey:(NSString * _Nonnull)objKey;
++ (BOOL)lz_setSettings:(NSString * _Nonnull)settings
+                object:(id _Nonnull)value
+                forKey:(NSString * _Nonnull)objKey;
 
 
 @end

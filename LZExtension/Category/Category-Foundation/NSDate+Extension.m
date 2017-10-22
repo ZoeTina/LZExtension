@@ -43,7 +43,7 @@
     return [[NSDate lz_sharedCalendar] components:unit fromDate:from toDate:self options:0];
 }
 
-- (BOOL)isThisYear {
+- (BOOL)lz_isThisYear {
     NSDate *now = [NSDate date];
     
     NSInteger nowYear = [[NSDate lz_sharedCalendar] component:NSCalendarUnitYear fromDate:now];
@@ -52,7 +52,7 @@
     return nowYear == selfYear;
 }
 
-- (BOOL)isThisDay {
+- (BOOL)lz_isThisDay {
     NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     
     NSDateComponents *nowCmps = [[NSDate lz_sharedCalendar] components:unit fromDate:[NSDate date]];
@@ -63,7 +63,7 @@
     && nowCmps.day == selfCmps.day;
 }
 
-- (BOOL)isTomorrowDay {
+- (BOOL)lz_isTomorrowDay {
     NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     
     NSDateComponents *nowCmps = [[NSDate lz_sharedCalendar] components:unit fromDate:[NSDate date]];
@@ -74,7 +74,7 @@
     && nowCmps.day  < selfCmps.day;
 }
 
-- (BOOL)isYesterday {
+- (BOOL)lz_isYesterday {
     [NSDate lz_sharedDateFormatter].dateFormat = @"yyyy-MM-dd";
     
     NSDate *nowDate = [[NSDate lz_sharedDateFormatter] dateFromString:[[NSDate lz_sharedDateFormatter] stringFromDate:[NSDate date]]];

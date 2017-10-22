@@ -10,7 +10,7 @@
 
 @implementation UITableView (Extension)
 
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame style:(UITableViewStyle)style cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle separatorInset:(UIEdgeInsets)separatorInset dataSource:(id<UITableViewDataSource> _Nullable)dataSource delegate:(id<UITableViewDelegate> _Nullable)delegate {
++ (instancetype _Nonnull)lz_initWithFrame:(CGRect)frame style:(UITableViewStyle)style cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle separatorInset:(UIEdgeInsets)separatorInset dataSource:(id<UITableViewDataSource> _Nullable)dataSource delegate:(id<UITableViewDelegate> _Nullable)delegate {
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
     [tableView setSeparatorStyle:cellSeparatorStyle];
     [tableView setSeparatorInset:separatorInset];
@@ -20,7 +20,7 @@
     return tableView;
 }
 
-- (NSArray * _Nonnull)getIndexPathsForSection:(NSUInteger)section {
+- (NSArray * _Nonnull)lz_getIndexPathsForSection:(NSUInteger)section {
     NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
     NSInteger rows = [self numberOfRowsInSection:section];
     for (int i = 0; i < rows; i++) {
@@ -31,13 +31,13 @@
     return (NSArray *)indexPaths;
 }
 
-- (NSIndexPath * _Nonnull)getNextIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
-    NSArray *indexPaths = [self getIndexPathsForSection:section];
+- (NSIndexPath * _Nonnull)lz_getNextIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
+    NSArray *indexPaths = [self lz_getIndexPathsForSection:section];
     return [indexPaths objectAtIndex:row + 1];
 }
 
-- (NSIndexPath * _Nonnull)getPreviousIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
-    NSArray *indexPaths = [self getIndexPathsForSection:section];
+- (NSIndexPath * _Nonnull)lz_getPreviousIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
+    NSArray *indexPaths = [self lz_getIndexPathsForSection:section];
     return [indexPaths objectAtIndex:row - 1];
 }
 

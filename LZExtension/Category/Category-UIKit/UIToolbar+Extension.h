@@ -18,6 +18,6 @@
  *
  *  @param transparent YES透明，NO不透明
  */
-- (void)setTransparent:(BOOL)transparent;
+- (void)lz_setTransparent:(BOOL)transparent;
 
 @end

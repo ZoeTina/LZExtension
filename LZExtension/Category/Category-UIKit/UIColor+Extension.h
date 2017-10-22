@@ -19,14 +19,14 @@
  *
  *  @return UIColor
  */
-+ (nonnull UIColor *)colorWithHex:(long)hexColor;
++ (nonnull UIColor *)lz_colorWithHex:(long)hexColor;
 /**
  *  使用十六进制数字生成颜色
  *  @param opacity 透明度(0.0~1.0)
  *
  *  @return UIColor
  */
-+ (nonnull UIColor *)colorWithHex:(long)hexColor opacity:(float)opacity;
++ (nonnull UIColor *)lz_colorWithHex:(long)hexColor opacity:(float)opacity;
 
 /**
  *  根据指定的HexString字符串创建一种颜色
@@ -39,14 +39,14 @@
  *  @param hexString Hex字符串
  *  @return UIColor
  */
-+ (nonnull UIColor *)colorWithHexString:(nonnull NSString *)hexString;
++ (nonnull UIColor *)lz_colorWithHexString:(nonnull NSString *)hexString;
 /**
  *  十六进制颜色代码
  *  @param opacity 透明度(0.0~1.0)
  *
  *  @return UIColor
  */
-+ (nonnull UIColor *)colorWithHexString:(nonnull NSString *)str opacity:(float)opacity;
++ (nonnull UIColor *)lz_colorWithHexString:(nonnull NSString *)str opacity:(float)opacity;
 
 /**
  *  使用指定的 r / g / b 数值生成颜色
@@ -57,7 +57,7 @@
  *
  *  @return UIColor
  */
-+ (nonnull instancetype)colorWithRed:(u_int8_t)red green:(u_int8_t)green blue:(u_int8_t)blue;
++ (nonnull instancetype)lz_colorWithRed:(u_int8_t)red green:(u_int8_t)green blue:(u_int8_t)blue;
 
 /**
  *  使用指定的 r / g / b / opacity(透明度) 生成颜色
@@ -69,14 +69,14 @@
  *
  *  @return UIColor
  */
-+ (nonnull instancetype)colorWithRed:(u_int8_t)red green:(u_int8_t)green blue:(u_int8_t)blue opacity:(float)opacity;
++ (nonnull instancetype)lz_colorWithRed:(u_int8_t)red green:(u_int8_t)green blue:(u_int8_t)blue opacity:(float)opacity;
 
 /**
  *  生成随机颜色
  *
  *  @return UIColor
  */
-+ (nonnull instancetype)randomColor;
++ (nonnull instancetype)lz_randomColor;
 
 #pragma mark - 颜色值
 /**
@@ -84,26 +84,26 @@
  *
  *  @return 返回当前颜色的 red 的 0～255 值
  */
-- (u_int8_t)redValue;
+- (u_int8_t)lz_redValue;
 /**
  *  生成随机颜色
  *
  *  @return 返回当前颜色的 green 的 0～255 值
  */
-- (u_int8_t)greenValue;
+- (u_int8_t)lz_greenValue;
 
 /**
  *  生成随机颜色
  *
  *  @return 返回当前颜色的 blue 的 0～255 值
  */
-- (u_int8_t)blueValue;
+- (u_int8_t)lz_blueValue;
 
 /**
  *  生成随机颜色
  *
  *  @return 返回当前颜色的 alpha 值
  */
-- (CGFloat)alphaValue;
+- (CGFloat)lz_alphaValue;
 
 @end

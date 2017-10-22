@@ -18,7 +18,7 @@ typedef id (*_IMP)(id,SEL,...);
 /** -------------------------分割线------------------------- */
 #pragma mark - method swizzling（method_exchangeImplementations交换方法）-->推荐使用
 //加载分类到内存的时候调用，只执行一次
-+ (void)load
++ (void)lz_load
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

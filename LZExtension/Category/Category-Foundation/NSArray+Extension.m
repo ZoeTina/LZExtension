@@ -10,7 +10,7 @@
 
 @implementation NSArray (SCExtension)
 
-- (NSString *_Nonnull)descriptionWithLocale:(id _Nullable)locale {
+- (NSString *_Nonnull)lz_descriptionWithLocale:(id _Nullable)locale {
     NSMutableString *strM = [NSMutableString stringWithString:@"(\n"];
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

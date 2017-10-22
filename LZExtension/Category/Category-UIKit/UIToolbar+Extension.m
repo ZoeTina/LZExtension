@@ -10,7 +10,7 @@
 
 @implementation UIToolbar (Extension)
 
-- (void)setTransparent:(BOOL)transparent {
+- (void)lz_setTransparent:(BOOL)transparent {
     if (transparent) {
         [self setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         [self setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];

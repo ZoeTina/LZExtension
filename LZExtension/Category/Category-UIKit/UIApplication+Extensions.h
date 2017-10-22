@@ -17,17 +17,17 @@
 /**
  * 返回应用程序代理
  */
-+ (AppDelegate *)appDelegate;
++ (AppDelegate *)lz_appDelegate;
 
 
 /**
  *  根视图控制器
  */
-+ (UIViewController *)rootViewController;
++ (UIViewController *)lz_rootViewController;
 
 /**
  *  返回当前设备对应的启动图片
  */
-+ (UIImage *)launchImage;
++ (UIImage *)lz_launchImage;
 
 @end

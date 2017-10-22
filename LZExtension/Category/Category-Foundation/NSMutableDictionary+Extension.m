@@ -10,7 +10,7 @@
 
 @implementation NSMutableDictionary (Extension)
 
-- (BOOL)safeSetObject:(id _Nonnull)anObject forKey:(id<NSCopying> _Nonnull)aKey {
+- (BOOL)lz_safeSetObject:(id _Nonnull)anObject forKey:(id<NSCopying> _Nonnull)aKey {
     if (anObject == nil) {
         return NO;
     }
