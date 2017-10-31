@@ -50,3 +50,4 @@
 #import "UIViewController+Extension.h"
 #import "UIWebView+Extension.h"
 #import "UIWindow+Extension.h"
+#import "UIControl+Extension.h"

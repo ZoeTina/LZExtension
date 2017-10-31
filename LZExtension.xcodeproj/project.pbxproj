@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F8507421FA2C6AC005E26D9 /* UIControl+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8507411FA2C6AC005E26D9 /* UIControl+Extension.m */; };
 		E74476951F96612C002EC7B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E74476941F96612C002EC7B8 /* main.m */; };
 		E74476981F96612C002EC7B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E74476971F96612C002EC7B8 /* AppDelegate.m */; };
 		E744769B1F96612C002EC7B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E744769A1F96612C002EC7B8 /* ViewController.m */; };
@@ -70,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F8507401FA2C6AC005E26D9 /* UIControl+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Extension.h"; sourceTree = "<group>"; };
+		2F8507411FA2C6AC005E26D9 /* UIControl+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Extension.m"; sourceTree = "<group>"; };
 		E74476901F96612C002EC7B8 /* LZExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E74476941F96612C002EC7B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E74476961F96612C002EC7B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				E744770C1F9661B9002EC7B8 /* UIWebView+Extension.m */,
 				E744770D1F9661B9002EC7B8 /* UIWindow+Extension.h */,
 				E744770E1F9661B9002EC7B8 /* UIWindow+Extension.m */,
+				2F8507401FA2C6AC005E26D9 /* UIControl+Extension.h */,
+				2F8507411FA2C6AC005E26D9 /* UIControl+Extension.m */,
 			);
 			path = "Category-UIKit";
 			sourceTree = "<group>";
@@ -410,7 +415,7 @@
 				TargetAttributes = {
 					E744768F1F96612C002EC7B8 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8RL8MGBZ32;
+						DevelopmentTeam = 9TG69MYF39;
 						ProvisioningStyle = Automatic;
 					};
 					E74476A81F96612C002EC7B8 = {
@@ -515,6 +520,7 @@
 				E744771D1F9661B9002EC7B8 /* UIApplication+Extensions.m in Sources */,
 				E74476951F96612C002EC7B8 /* main.m in Sources */,
 				E74477151F9661B9002EC7B8 /* NSFileManager+Extension.m in Sources */,
+				2F8507421FA2C6AC005E26D9 /* UIControl+Extension.m in Sources */,
 				E74477111F9661B9002EC7B8 /* NSData+Extension.m in Sources */,
 				E74477161F9661B9002EC7B8 /* NSMutableArray+Extension.m in Sources */,
 			);
@@ -677,7 +683,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8RL8MGBZ32;
+				DEVELOPMENT_TEAM = 9TG69MYF39;
 				GCC_PREFIX_HEADER = LZExtension/AppConstant.h;
 				INFOPLIST_FILE = LZExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -691,7 +697,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8RL8MGBZ32;
+				DEVELOPMENT_TEAM = 9TG69MYF39;
 				GCC_PREFIX_HEADER = LZExtension/AppConstant.h;
 				INFOPLIST_FILE = LZExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

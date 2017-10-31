@@ -12,37 +12,29 @@
  *  此分类增加了一些关于NSString的有用方法
  */
 @interface NSString (Extension)
-/**
- *手机号码验证 MODIFIED BY HELENSONG
- */
+
+/** 手机号码验证 MODIFIED BY HELENSONG */
 - (BOOL) lz_isValidateMobile;
+
+/** 判断字符串是否为空 */
+- (BOOL) isBlankString:(NSString *_Nonnull)string;
 ///**
 // *身份证验证
 // */
 //- (BOOL)validateIdentityCard;
-/**
- * 判断字段是否包含空格
- */
+/** 判断字段是否包含空格 */
 - (BOOL)lz_validateContainsSpace;
 
-/**
- *  根据生日返回年龄
- */
+/** 根据生日返回年龄 */
 - (NSString *_Nonnull)lz_ageFromBirthday;
 
-/**
- *  根据身份证返回岁数
- */
+/** 根据身份证返回岁数 */
 - (NSString *_Nonnull)lz_ageFromIDCard;
 
-/**
- *  根据身份证返回生日
- */
+/** 根据身份证返回生日 */
 - (NSString *_Nonnull)lz_birthdayFromIDCard;
 
-/**
- *  根据身份证返回性别
- */
+/** 根据身份证返回性别 */
 - (NSString *_Nonnull)lz_sexFromIDCard;
 
 /**
@@ -62,16 +54,16 @@
 
 - (BOOL)lz_isEmptyString;
 
-/// 拼接了`文档目录`的全路径
+/** 拼接了`文档目录`的全路径 */ 
 @property (nullable, nonatomic, readonly) NSString *lz_documentDirectory;
-/// 拼接了`缓存目录`的全路径
+/** 拼接了`缓存目录`的全路径 */
 @property (nullable, nonatomic, readonly) NSString *lz_cacheDirecotry;
-/// 拼接了临时目录的全路径
+/** 拼接了临时目录的全路径 */
 @property (nullable, nonatomic, readonly) NSString *lz_tmpDirectory;
 
-/// BASE 64 编码的字符串内容
+/** BASE 64 编码的字符串内容 */
 @property(nullable, nonatomic, readonly) NSString *lz_base64encode;
-/// BASE 64 解码的字符串内容
+/** BASE 64 解码的字符串内容 */
 @property(nullable, nonatomic, readonly) NSString *lz_base64decode;
 
 #pragma mark - 散列函数 Hash
